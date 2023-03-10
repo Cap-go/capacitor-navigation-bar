@@ -1,7 +1,7 @@
 {
   "name": "@capgo/capacitor-navigation-bar",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Set navigation bar color for android lolipop and higher",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
