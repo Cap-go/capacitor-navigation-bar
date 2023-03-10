@@ -5,7 +5,7 @@ Set navigation bar color for android lolipop and higher
 ## Install
 
 ```bash
-npm install capacitor-navigation-bar
+npm install @capgo/capacitor-navigation-bar
 npx cap sync
 ```
 
