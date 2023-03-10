@@ -1,3 +1,4 @@
 export interface NavigationBarPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  setNavigationBarColor(options: { color: string }): Promise<void>;
+  getNavigationBarColor(): Promise<{ color: string }>;
 }

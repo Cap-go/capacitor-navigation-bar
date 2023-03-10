@@ -7,12 +7,18 @@ import Capacitor
  */
 @objc(NavigationBarPlugin)
 public class NavigationBarPlugin: CAPPlugin {
-    private let implementation = NavigationBar()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
+    @objc func setNavigationBarColor(_ call: CAPPluginCall) {
+        let color = call.getString("color") ?? ""
+        print("Cannot set navigation bar color in ios \(color)")
         call.resolve([
-            "value": implementation.echo(value)
+            "value": false
+        ])
+    }
+    @objc func getNavigationBarColor(_ call: CAPPluginCall) {
+        print("Cannot get navigation bar color in ios")
+        call.resolve([
+            "color": "#000000"
         ])
     }
 }

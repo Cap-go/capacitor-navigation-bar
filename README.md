@@ -13,24 +13,34 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`setNavigationBarColor(...)`](#setnavigationbarcolor)
+* [`getNavigationBarColor()`](#getnavigationbarcolor)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### setNavigationBarColor(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+setNavigationBarColor(options: { color: string; }) => Promise<void>
 ```
 
 | Param         | Type                            |
 | ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
+| **`options`** | <code>{ color: string; }</code> |
 
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+--------------------
+
+
+### getNavigationBarColor()
+
+```typescript
+getNavigationBarColor() => Promise<{ color: string; }>
+```
+
+**Returns:** <code>Promise&lt;{ color: string; }&gt;</code>
 
 --------------------
 
