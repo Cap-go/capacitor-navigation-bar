@@ -96,9 +96,9 @@ packages:
     hasBin: true
     dependencies:
       '@ionic/cli-framework-output': 2.2.6
-      '@ionic/utils-fs': 3.1.6
-      '@ionic/utils-subprocess': 2.1.11
-      '@ionic/utils-terminal': 2.3.3
+      '@ionic/utils-fs': 3.1.7
+      '@ionic/utils-subprocess': 2.1.12
+      '@ionic/utils-terminal': 2.3.4
       commander: 9.5.0
       debug: 4.3.4
       env-paths: 2.2.1
@@ -249,6 +249,16 @@ packages:
       - supports-color
     dev: true
 
+  /@ionic/utils-array@2.1.6:
+    resolution: {integrity: sha512-0JZ1Zkp3wURnv8oq6Qt7fMPo5MpjbLoUoa9Bu2Q4PJuSDWM8H8gwF3dQO7VTeUj3/0o1IB1wGkFWZZYgUXZMUg==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      debug: 4.3.4
+      tslib: 2.5.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@ionic/utils-fs@3.1.6:
     resolution: {integrity: sha512-eikrNkK89CfGPmexjTfSWl4EYqsPSBh0Ka7by4F0PLc1hJZYtJxUZV3X4r5ecA8ikjicUmcbU7zJmAjmqutG/w==}
     engines: {node: '>=10.3.0'}
@@ -261,9 +271,31 @@ packages:
       - supports-color
     dev: true
 
+  /@ionic/utils-fs@3.1.7:
+    resolution: {integrity: sha512-2EknRvMVfhnyhL1VhFkSLa5gOcycK91VnjfrTB0kbqkTFCOXyXgVLI5whzq7SLrgD9t1aqos3lMMQyVzaQ5gVA==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      '@types/fs-extra': 8.1.2
+      debug: 4.3.4
+      fs-extra: 9.1.0
+      tslib: 2.5.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@ionic/utils-object@2.1.5:
     resolution: {integrity: sha512-XnYNSwfewUqxq+yjER1hxTKggftpNjFLJH0s37jcrNDwbzmbpFTQTVAp4ikNK4rd9DOebX/jbeZb8jfD86IYxw==}
     engines: {node: '>=10.3.0'}
+    dependencies:
+      debug: 4.3.4
+      tslib: 2.5.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@ionic/utils-object@2.1.6:
+    resolution: {integrity: sha512-vCl7sl6JjBHFw99CuAqHljYJpcE88YaH2ZW4ELiC/Zwxl5tiwn4kbdP/gxi2OT3MQb1vOtgAmSNRtusvgxI8ww==}
+    engines: {node: '>=16.0.0'}
     dependencies:
       debug: 4.3.4
       tslib: 2.5.2
@@ -285,9 +317,33 @@ packages:
       - supports-color
     dev: true
 
+  /@ionic/utils-process@2.1.11:
+    resolution: {integrity: sha512-Uavxn+x8j3rDlZEk1X7YnaN6wCgbCwYQOeIjv/m94i1dzslqWhqIHEqxEyeE8HsT5Negboagg7GtQiABy+BLbA==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      '@ionic/utils-object': 2.1.6
+      '@ionic/utils-terminal': 2.3.4
+      debug: 4.3.4
+      signal-exit: 3.0.7
+      tree-kill: 1.2.2
+      tslib: 2.5.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@ionic/utils-stream@3.1.5:
     resolution: {integrity: sha512-hkm46uHvEC05X/8PHgdJi4l4zv9VQDELZTM+Kz69odtO9zZYfnt8DkfXHJqJ+PxmtiE5mk/ehJWLnn/XAczTUw==}
     engines: {node: '>=10.3.0'}
+    dependencies:
+      debug: 4.3.4
+      tslib: 2.5.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@ionic/utils-stream@3.1.6:
+    resolution: {integrity: sha512-4+Kitey1lTA1yGtnigeYNhV/0tggI3lWBMjC7tBs1K9GXa/q7q4CtOISppdh8QgtOhrhAXS2Igp8rbko/Cj+lA==}
+    engines: {node: '>=16.0.0'}
     dependencies:
       debug: 4.3.4
       tslib: 2.5.2
@@ -304,6 +360,22 @@ packages:
       '@ionic/utils-process': 2.1.10
       '@ionic/utils-stream': 3.1.5
       '@ionic/utils-terminal': 2.3.3
+      cross-spawn: 7.0.3
+      debug: 4.3.4
+      tslib: 2.5.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@ionic/utils-subprocess@2.1.12:
+    resolution: {integrity: sha512-N05Y+dIXBHofKWJTheCMzVqmgY9wFmZcRv/LdNnfXaaA/mxLTyGxQYeig8fvQXTtDafb/siZXcrTkmQ+y6n3Yg==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      '@ionic/utils-array': 2.1.6
+      '@ionic/utils-fs': 3.1.7
+      '@ionic/utils-process': 2.1.11
+      '@ionic/utils-stream': 3.1.6
+      '@ionic/utils-terminal': 2.3.4
       cross-spawn: 7.0.3
       debug: 4.3.4
       tslib: 2.5.2
@@ -2016,8 +2088,8 @@ packages:
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
-      '@ionic/utils-fs': 3.1.6
-      '@ionic/utils-terminal': 2.3.3
+      '@ionic/utils-fs': 3.1.7
+      '@ionic/utils-terminal': 2.3.4
       bplist-parser: 0.3.2
       debug: 4.3.4
       elementtree: 0.1.7
