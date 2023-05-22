@@ -30,12 +30,14 @@ npx cap sync
 ### setNavigationBarColor(...)
 
 ```typescript
-setNavigationBarColor(options: { color: string; }) => Promise<void>
+setNavigationBarColor(options: { color: string; }) => any
 ```
 
 | Param         | Type                            |
 | ------------- | ------------------------------- |
 | **`options`** | <code>{ color: string; }</code> |
+
+**Returns:** <code>any</code>
 
 --------------------
 
@@ -43,10 +45,10 @@ setNavigationBarColor(options: { color: string; }) => Promise<void>
 ### getNavigationBarColor()
 
 ```typescript
-getNavigationBarColor() => Promise<{ color: string; }>
+getNavigationBarColor() => any
 ```
 
-**Returns:** <code>Promise&lt;{ color: string; }&gt;</code>
+**Returns:** <code>any</code>
 
 --------------------
 
