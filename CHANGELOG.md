@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.0.5](https://github.com/Cap-go/capacitor-navigation-bar/compare/6.0.4...6.0.5) (2023-08-21)
+
 ### [6.0.4](https://github.com/Cap-go/capacitor-navigation-bar/compare/6.0.3...6.0.4) (2023-07-31)
 
 
