@@ -111,7 +111,7 @@ window.customElements.define(
           }
         });
     }
-  }
+  },
 );
 
 window.customElements.define(
@@ -140,5 +140,5 @@ window.customElements.define(
     <slot></slot>
     `;
     }
-  }
+  },
 );
