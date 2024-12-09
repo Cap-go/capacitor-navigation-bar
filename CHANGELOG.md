@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [6.1.68](https://github.com/Cap-go/capacitor-navigation-bar/compare/6.1.67...6.1.68) (2024-12-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.android.tools.build:gradle to v8.7.3 ([#110](https://github.com/Cap-go/capacitor-navigation-bar/issues/110)) ([18c4d26](https://github.com/Cap-go/capacitor-navigation-bar/commit/18c4d26cefbe844a3656498ca278a4bbc570e4b2))
+
 ### [6.1.67](https://github.com/Cap-go/capacitor-navigation-bar/compare/6.1.66...6.1.67) (2024-12-02)
 
 ### [6.1.66](https://github.com/Cap-go/capacitor-navigation-bar/compare/6.1.65...6.1.66) (2024-11-25)
