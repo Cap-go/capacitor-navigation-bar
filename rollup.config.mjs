@@ -4,7 +4,7 @@ export default {
     {
       file: "dist/plugin.js",
       format: "iife",
-      name: "capacitorCapacitorUpdater",
+      name: "NavigationBarPlugin",
       globals: {
         "@capacitor/core": "capacitorExports",
       },
