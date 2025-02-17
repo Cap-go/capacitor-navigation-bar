@@ -17,7 +17,7 @@ public class NavigationBarPlugin extends Plugin {
   @PluginMethod
   public void setNavigationBarColor(PluginCall call) {
     final String color = call.getString("color");
-    final String buttonStyle = call.getString("buttonStyle", "#FFFFFF"); // Default to LIGHT
+    final String buttonStyle = call.getString("buttonStyle", "#FFFFFF");
 
     if (color == null) {
       call.reject("Color must be provided");
@@ -27,22 +27,25 @@ public class NavigationBarPlugin extends Plugin {
     getBridge()
       .executeOnMainThread(() -> {
         try {
-          final int parsedColor = WebColor.parseColor(
-            color.toUpperCase(Locale.ROOT)
-          );
-          if (
-            android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
-          ) {
-            getActivity().getWindow().setNavigationBarColor(parsedColor);
+          if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            if ("transparent".equals(color.toLowerCase())) {
+              int flags = getActivity().getWindow().getDecorView().getSystemUiVisibility();
+              flags |= View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+              getActivity().getWindow().getDecorView().setSystemUiVisibility(flags);
+              getActivity().getWindow().setNavigationBarColor(Color.TRANSPARENT);
+            } else {
+              final int parsedColor = WebColor.parseColor(color.toUpperCase(Locale.ROOT));
+              getActivity().getWindow().setNavigationBarColor(parsedColor);
+            }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
               int flags = getActivity()
                 .getWindow()
                 .getDecorView()
                 .getSystemUiVisibility();
-              if (buttonStyle.equals("#000000")) { // DARK
+              if (buttonStyle.equals("#000000")) {
                 flags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
-              } else { // LIGHT
+              } else {
                 flags &= ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
               }
               getActivity()
@@ -53,9 +56,7 @@ public class NavigationBarPlugin extends Plugin {
           }
           call.resolve();
         } catch (IllegalArgumentException ex) {
-          call.reject(
-            "Invalid color provided. Must be a hex color (#RRGGBB or #RRGGBBAA for transparency)"
-          );
+          call.reject("Invalid color provided. Must be a hex color (#RRGGBB) or 'transparent'");
         }
       });
   }

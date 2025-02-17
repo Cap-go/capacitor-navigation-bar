@@ -6,7 +6,7 @@ export enum NavigationBarButtonStyle {
 export enum NavigationBarColor {
   WHITE = "#FFFFFF",
   BLACK = "#000000",
-  TRANSPARENT = "#00000000",
+  TRANSPARENT = "transparent",
 }
 
 export interface NavigationBarPlugin {
