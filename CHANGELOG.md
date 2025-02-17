@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.3](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.2...7.1.3) (2025-02-17)
+
+
+### Bug Fixes
+
+* issue with button colors ([347d961](https://github.com/Cap-go/capacitor-navigation-bar/commit/347d961c83410281d78368d61d4010ed990f98c9))
+
 ### [7.1.2](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.1...7.1.2) (2025-02-10)
 
 ### [7.1.1](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.0...7.1.1) (2025-02-09)
