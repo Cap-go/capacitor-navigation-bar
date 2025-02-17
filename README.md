@@ -57,11 +57,11 @@ getNavigationBarColor() => Promise<{ color: string; buttonStyle: NavigationBarBu
 
 #### NavigationBarColor
 
-| Members           | Value                    |
-| ----------------- | ------------------------ |
-| **`WHITE`**       | <code>"#FFFFFF"</code>   |
-| **`BLACK`**       | <code>"#000000"</code>   |
-| **`TRANSPARENT`** | <code>"#00000000"</code> |
+| Members           | Value                      |
+| ----------------- | -------------------------- |
+| **`WHITE`**       | <code>"#FFFFFF"</code>     |
+| **`BLACK`**       | <code>"#000000"</code>     |
+| **`TRANSPARENT`** | <code>"transparent"</code> |
 
 
 #### NavigationBarButtonStyle
