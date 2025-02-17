@@ -21,6 +21,7 @@ npx cap sync
 
 * [`setNavigationBarColor(...)`](#setnavigationbarcolor)
 * [`getNavigationBarColor()`](#getnavigationbarcolor)
+* [Enums](#enums)
 
 </docgen-index>
 
@@ -30,12 +31,12 @@ npx cap sync
 ### setNavigationBarColor(...)
 
 ```typescript
-setNavigationBarColor(options: { color: string; }) => Promise<void>
+setNavigationBarColor(options: { color: NavigationBarColor | string; buttonStyle?: NavigationBarButtonStyle; }) => Promise<void>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ color: string; }</code> |
+| Param         | Type                                                                                                            |
+| ------------- | --------------------------------------------------------------------------------------------------------------- |
+| **`options`** | <code>{ color: string; buttonStyle?: <a href="#navigationbarbuttonstyle">NavigationBarButtonStyle</a>; }</code> |
 
 --------------------
 
@@ -43,11 +44,31 @@ setNavigationBarColor(options: { color: string; }) => Promise<void>
 ### getNavigationBarColor()
 
 ```typescript
-getNavigationBarColor() => Promise<{ color: string; }>
+getNavigationBarColor() => Promise<{ color: string; buttonStyle: NavigationBarButtonStyle; }>
 ```
 
-**Returns:** <code>Promise&lt;{ color: string; }&gt;</code>
+**Returns:** <code>Promise&lt;{ color: string; buttonStyle: <a href="#navigationbarbuttonstyle">NavigationBarButtonStyle</a>; }&gt;</code>
 
 --------------------
+
+
+### Enums
+
+
+#### NavigationBarColor
+
+| Members           | Value                    |
+| ----------------- | ------------------------ |
+| **`WHITE`**       | <code>"#FFFFFF"</code>   |
+| **`BLACK`**       | <code>"#000000"</code>   |
+| **`TRANSPARENT`** | <code>"#00000000"</code> |
+
+
+#### NavigationBarButtonStyle
+
+| Members     | Value                  |
+| ----------- | ---------------------- |
+| **`LIGHT`** | <code>"#FFFFFF"</code> |
+| **`DARK`**  | <code>"#000000"</code> |
 
 </docgen-api>
