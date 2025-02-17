@@ -27,14 +27,28 @@ public class NavigationBarPlugin extends Plugin {
     getBridge()
       .executeOnMainThread(() -> {
         try {
-          if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+          if (
+            android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
+          ) {
             if ("transparent".equals(color.toLowerCase())) {
-              int flags = getActivity().getWindow().getDecorView().getSystemUiVisibility();
-              flags |= View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-              getActivity().getWindow().getDecorView().setSystemUiVisibility(flags);
-              getActivity().getWindow().setNavigationBarColor(Color.TRANSPARENT);
+              int flags = getActivity()
+                .getWindow()
+                .getDecorView()
+                .getSystemUiVisibility();
+              flags |=
+                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+              getActivity()
+                .getWindow()
+                .getDecorView()
+                .setSystemUiVisibility(flags);
+              getActivity()
+                .getWindow()
+                .setNavigationBarColor(Color.TRANSPARENT);
             } else {
-              final int parsedColor = WebColor.parseColor(color.toUpperCase(Locale.ROOT));
+              final int parsedColor = WebColor.parseColor(
+                color.toUpperCase(Locale.ROOT)
+              );
               getActivity().getWindow().setNavigationBarColor(parsedColor);
             }
 
@@ -56,7 +70,9 @@ public class NavigationBarPlugin extends Plugin {
           }
           call.resolve();
         } catch (IllegalArgumentException ex) {
-          call.reject("Invalid color provided. Must be a hex color (#RRGGBB) or 'transparent'");
+          call.reject(
+            "Invalid color provided. Must be a hex color (#RRGGBB) or 'transparent'"
+          );
         }
       });
   }
