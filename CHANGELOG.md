@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.2](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.1...7.1.2) (2025-02-10)
+
+### [7.1.1](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.0...7.1.1) (2025-02-09)
+
+
+### Bug Fixes
+
+* missing class ([32ef0f2](https://github.com/Cap-go/capacitor-navigation-bar/commit/32ef0f2b30a206050f00e71e1b8a9d4e58907569))
+
 ## [7.1.0](https://github.com/Cap-go/capacitor-navigation-bar/compare/6.1.75...7.1.0) (2025-02-08)
 
 
