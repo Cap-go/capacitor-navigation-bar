@@ -11,7 +11,7 @@ public class NavigationBarPlugin: CAPPlugin, CAPBridgedPlugin {
     public let jsName = "NavigationBar"
     public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "setNavigationBarColor", returnType: CAPPluginReturnPromise),
-        CAPPluginMethod(name: "getNavigationBarColor", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "getNavigationBarColor", returnType: CAPPluginReturnPromise)
     ]
     @objc func setNavigationBarColor(_ call: CAPPluginCall) {
         let color = call.getString("color") ?? ""
