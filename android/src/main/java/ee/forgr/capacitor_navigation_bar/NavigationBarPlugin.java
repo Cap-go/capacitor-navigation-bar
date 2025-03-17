@@ -3,6 +3,7 @@ package ee.forgr.capacitor_navigation_bar;
 import android.graphics.Color;
 import android.os.Build;
 import android.view.View;
+import android.view.WindowInsetsController;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
