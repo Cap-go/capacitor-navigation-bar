@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 8.0.0 (2025-03-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* capacitor 5 and setup CI
+
+### Features
+
+* capacitor 5 and setup CI ([b229be3](https://github.com/Cap-go/capacitor-navigation-bar/commit/b229be32869bc75aadcf225e241db0ad2014ee44))
+* migrate to capacitor v7 ([6ace6cf](https://github.com/Cap-go/capacitor-navigation-bar/commit/6ace6cf226cdfb69af892ef3c57d76a224ccfb39))
+* upgrade to capacitor 6 ([a4531f5](https://github.com/Cap-go/capacitor-navigation-bar/commit/a4531f57545963aa0f9ddbabc6de9564a211e42b))
+* v0 of the plugin ([d069f72](https://github.com/Cap-go/capacitor-navigation-bar/commit/d069f7249fc61f92de73a73ba2dad90ef7e429a4))
+
+
+### Bug Fixes
+
+* add missing link ([7f7628f](https://github.com/Cap-go/capacitor-navigation-bar/commit/7f7628f49b7afc27aa08144615bd03b4533f5af7))
+* build command ios ([b72fb81](https://github.com/Cap-go/capacitor-navigation-bar/commit/b72fb81377046cc685407d2e779804c6221d45d5))
+* build issue ([6ab7f88](https://github.com/Cap-go/capacitor-navigation-bar/commit/6ab7f88215fc72e8e6bba783904c7611a6e22aba))
+* CI/CD ([8702c4f](https://github.com/Cap-go/capacitor-navigation-bar/commit/8702c4ff1f5d4d40d684ba6a877a4a6e10cbe674))
+* **deps:** update capacitor monorepo to v7 ([91c0775](https://github.com/Cap-go/capacitor-navigation-bar/commit/91c0775f3d805009f756788cecc86505f82dd6d6))
+* **deps:** update dependency com.android.tools.build:gradle to v8.0.2 ([8fbfa09](https://github.com/Cap-go/capacitor-navigation-bar/commit/8fbfa097e10a32fb91c32bd063ab172e96def691))
+* **deps:** update dependency com.android.tools.build:gradle to v8.1.0 ([29a51c9](https://github.com/Cap-go/capacitor-navigation-bar/commit/29a51c9e734eec3bce2e5df81b8785fee10c38af))
+* **deps:** update dependency com.android.tools.build:gradle to v8.1.1 ([c17840a](https://github.com/Cap-go/capacitor-navigation-bar/commit/c17840a97cbb21f45b3f8cd10f7883162d29cc5d))
+* **deps:** update dependency com.android.tools.build:gradle to v8.1.2 ([5cec544](https://github.com/Cap-go/capacitor-navigation-bar/commit/5cec54479316e057f607a0611fd2689480ba3fa7))
+* **deps:** update dependency com.android.tools.build:gradle to v8.1.3 ([5f1e8a2](https://github.com/Cap-go/capacitor-navigation-bar/commit/5f1e8a219bd66392457a4372e9739af08662d5b1))
+* **deps:** update dependency com.android.tools.build:gradle to v8.1.4 ([dd16207](https://github.com/Cap-go/capacitor-navigation-bar/commit/dd16207d89792a441d7ad40e8ab38c9d780be223))
+* **deps:** update dependency com.android.tools.build:gradle to v8.2.0 ([78ef7df](https://github.com/Cap-go/capacitor-navigation-bar/commit/78ef7df4601221a1f0fca9527e2b8a41676c244e))
+* **deps:** update dependency com.android.tools.build:gradle to v8.4.0 ([1a14142](https://github.com/Cap-go/capacitor-navigation-bar/commit/1a1414258246e2f0fd4ce4bd1dc5ca85e4b5fd7e))
+* **deps:** update dependency com.android.tools.build:gradle to v8.4.1 ([5c5a430](https://github.com/Cap-go/capacitor-navigation-bar/commit/5c5a430c5afebfa1a10cc78fa51b2f913c1446cb))
+* **deps:** update dependency com.android.tools.build:gradle to v8.6.0 ([05dc4bb](https://github.com/Cap-go/capacitor-navigation-bar/commit/05dc4bb7b89a826ec330c418b33d1516989ed8f1))
+* **deps:** update dependency com.android.tools.build:gradle to v8.6.1 ([e7145f9](https://github.com/Cap-go/capacitor-navigation-bar/commit/e7145f9a6cedf49155f3df2aab24898a083e09a5))
+* **deps:** update dependency com.android.tools.build:gradle to v8.7.1 ([f67384c](https://github.com/Cap-go/capacitor-navigation-bar/commit/f67384ceba706dc9a30a8528b31d553079c9a0a5))
+* **deps:** update dependency com.android.tools.build:gradle to v8.7.2 ([#106](https://github.com/Cap-go/capacitor-navigation-bar/issues/106)) ([82009d8](https://github.com/Cap-go/capacitor-navigation-bar/commit/82009d8cf9fe0162fb562d643f692791c35dd005))
+* **deps:** update dependency com.android.tools.build:gradle to v8.7.3 ([#110](https://github.com/Cap-go/capacitor-navigation-bar/issues/110)) ([18c4d26](https://github.com/Cap-go/capacitor-navigation-bar/commit/18c4d26cefbe844a3656498ca278a4bbc570e4b2))
+* for transparent ([7a15d9f](https://github.com/Cap-go/capacitor-navigation-bar/commit/7a15d9f9c2cdf351c97b045d81e1370c833f27e0))
+* functions link ios ([d092fc8](https://github.com/Cap-go/capacitor-navigation-bar/commit/d092fc868c02e2719cf6ebefe9cfbf3e1c29830d))
+* issue with button colors ([347d961](https://github.com/Cap-go/capacitor-navigation-bar/commit/347d961c83410281d78368d61d4010ed990f98c9))
+* keywords ([8b39b65](https://github.com/Cap-go/capacitor-navigation-bar/commit/8b39b654352a62fb1732b9ab34fd81eebead5a2e))
+* lint ([ec6d73e](https://github.com/Cap-go/capacitor-navigation-bar/commit/ec6d73e0fa13a3076165a3689463a5450f433515))
+* lint issue ([0ca21de](https://github.com/Cap-go/capacitor-navigation-bar/commit/0ca21defccf0f96d4df4475e13da78d7df9b1bf6))
+* missing class ([32ef0f2](https://github.com/Cap-go/capacitor-navigation-bar/commit/32ef0f2b30a206050f00e71e1b8a9d4e58907569))
+* publish with capgo ([64bfcf4](https://github.com/Cap-go/capacitor-navigation-bar/commit/64bfcf4e79c85da8db8a4f6b21638c8888ace129))
+* use last pnpm ([09a9d53](https://github.com/Cap-go/capacitor-navigation-bar/commit/09a9d53e764ab8b2d0a5b621ad0c6ca11b2e9fe1))
+
 ### [7.1.6](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.5...7.1.6) (2025-02-17)
 
 
