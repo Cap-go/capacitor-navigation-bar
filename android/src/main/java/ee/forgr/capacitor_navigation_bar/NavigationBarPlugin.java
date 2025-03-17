@@ -53,19 +53,32 @@ public class NavigationBarPlugin extends Plugin {
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-              int flags = getActivity()
-                .getWindow()
-                .getDecorView()
-                .getSystemUiVisibility();
-              if (buttonStyle.equals("#000000")) {
-                flags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
-              } else {
-                flags &= ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
-              }
-              getActivity()
-                .getWindow()
-                .getDecorView()
-                .setSystemUiVisibility(flags);
+              WindowInsetsController insetsController = getActivity().getWindow().getInsetsController();
+                if (insetsController != null) {
+                    if (buttonStyle.equals("#000000")) {
+                        insetsController.setSystemBarsAppearance(
+                            WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
+                            WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
+                        );
+                    } else {
+                        insetsController.setSystemBarsAppearance(
+                            0,
+                            WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
+                        );
+                    }
+                }
+            } else {
+                // Fallback for devices running below Android 11
+                int flags = getActivity()
+                        .getWindow()
+                        .getDecorView()
+                        .getSystemUiVisibility();
+                if (buttonStyle.equals("#000000")) {
+                    flags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+                } else {
+                    flags &= ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+                }
+                getActivity().getWindow().getDecorView().setSystemUiVisibility(flags);
             }
           }
           call.resolve();
