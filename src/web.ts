@@ -1,6 +1,6 @@
 import { WebPlugin } from "@capacitor/core";
 
-import { NavigationBarPlugin } from "./definitions";
+import type { NavigationBarPlugin } from "./definitions";
 
 export class NavigationBarWeb extends WebPlugin implements NavigationBarPlugin {
   async setNavigationBarColor(options: { color: string }): Promise<void> {

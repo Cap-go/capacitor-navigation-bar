@@ -44,10 +44,10 @@ setNavigationBarColor(options: { color: NavigationBarColor | string; buttonStyle
 ### getNavigationBarColor()
 
 ```typescript
-getNavigationBarColor() => Promise<{ color: string; buttonStyle: NavigationBarButtonStyle; }>
+getNavigationBarColor() => Promise<{ color: string; buttonStyle?: NavigationBarButtonStyle; }>
 ```
 
-**Returns:** <code>Promise&lt;{ color: string; buttonStyle: <a href="#navigationbarbuttonstyle">NavigationBarButtonStyle</a>; }&gt;</code>
+**Returns:** <code>Promise&lt;{ color: string; buttonStyle?: <a href="#navigationbarbuttonstyle">NavigationBarButtonStyle</a>; }&gt;</code>
 
 --------------------
 
