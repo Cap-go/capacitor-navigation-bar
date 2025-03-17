@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.0.3](https://github.com/aeringamaroff/capacitor-navigation-bar/compare/8.0.1...8.0.3) (2025-03-17)
+
 ### [8.0.1](https://github.com/Cap-go/capacitor-navigation-bar/compare/8.0.0...8.0.1) (2025-03-17)
 
 ## 8.0.0 (2025-03-17)
