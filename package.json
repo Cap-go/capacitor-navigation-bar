@@ -1,6 +1,6 @@
 {
   "name": "@aeringamaroff/capacitor-navigation-bar",
-  "version": "8.0.4",
+  "version": "8.0.5",
   "description": "Set navigation bar color for android lolipop and higher",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
