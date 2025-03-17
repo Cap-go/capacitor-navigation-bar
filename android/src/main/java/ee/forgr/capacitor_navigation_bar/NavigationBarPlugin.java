@@ -3,6 +3,7 @@ package ee.forgr.capacitor_navigation_bar;
 import android.graphics.Color;
 import android.os.Build;
 import android.view.View;
+import android.view.WindowInsetsController;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -53,6 +54,24 @@ public class NavigationBarPlugin extends Plugin {
             }
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+              WindowInsetsController insetsController = getActivity()
+                .getWindow()
+                .getInsetsController();
+              if (insetsController != null) {
+                if (buttonStyle.equals("#000000")) {
+                  insetsController.setSystemBarsAppearance(
+                    WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
+                    WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
+                  );
+                } else {
+                  insetsController.setSystemBarsAppearance(
+                    0,
+                    WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
+                  );
+                }
+              }
+            } else {
+              // Fallback for devices running below Android 11
               int flags = getActivity()
                 .getWindow()
                 .getDecorView()

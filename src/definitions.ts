@@ -16,6 +16,6 @@ export interface NavigationBarPlugin {
   }): Promise<void>;
   getNavigationBarColor(): Promise<{
     color: string;
-    buttonStyle: NavigationBarButtonStyle;
+    buttonStyle?: NavigationBarButtonStyle;
   }>;
 }
