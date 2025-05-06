@@ -1,6 +1,6 @@
 import { WebPlugin } from "@capacitor/core";
 
-import { NavigationBarButtonStyle} from "./definitions";
+import { NavigationBarButtonStyle } from "./definitions";
 import type { NavigationBarPlugin } from "./definitions";
 
 export class NavigationBarWeb extends WebPlugin implements NavigationBarPlugin {
@@ -8,7 +8,10 @@ export class NavigationBarWeb extends WebPlugin implements NavigationBarPlugin {
     console.log("Cannot setNavigationBarColor on web", options);
     return;
   }
-  async getNavigationBarColor(): Promise<{ color: string, buttonStyle: NavigationBarButtonStyle }> {
+  async getNavigationBarColor(): Promise<{
+    color: string;
+    buttonStyle: NavigationBarButtonStyle;
+  }> {
     console.log("Cannot getNavigationBarColor on web");
     return { color: "#000000", buttonStyle: NavigationBarButtonStyle.DARK };
   }
