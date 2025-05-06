@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.6](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.5...7.1.6) (2025-02-17)
+
+
+### Bug Fixes
+
+* **deps:** update capacitor monorepo to v7 ([91c0775](https://github.com/Cap-go/capacitor-navigation-bar/commit/91c0775f3d805009f756788cecc86505f82dd6d6))
+
+### [7.1.5](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.4...7.1.5) (2025-02-17)
+
+
+### Bug Fixes
+
+* lint issue ([0ca21de](https://github.com/Cap-go/capacitor-navigation-bar/commit/0ca21defccf0f96d4df4475e13da78d7df9b1bf6))
+
 ### [7.1.4](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.3...7.1.4) (2025-02-17)
 
 
