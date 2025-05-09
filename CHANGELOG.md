@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.9](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.8...7.1.9) (2025-05-09)
+
+
+### Bug Fixes
+
+* Buttons color fix and replaced buttonStyle by darkButtons ([384be87](https://github.com/Cap-go/capacitor-navigation-bar/commit/384be873fb34d4b7b5f8f9b4d310d6196d4a1ebb))
+* Implemented codeRabbitAI suggestions ([9974f73](https://github.com/Cap-go/capacitor-navigation-bar/commit/9974f73d2a71e7f06c1c0c6f6055fbb7a8c1201d))
+
 ### [7.1.8](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.7...7.1.8) (2025-05-06)
 
 
