@@ -31,12 +31,12 @@ npx cap sync
 ### setNavigationBarColor(...)
 
 ```typescript
-setNavigationBarColor(options: { color: NavigationBarColor | string; buttonStyle?: NavigationBarButtonStyle; }) => Promise<void>
+setNavigationBarColor(options: { color: NavigationBarColor | string; darkButtons?: boolean; }) => Promise<void>
 ```
 
-| Param         | Type                                                                                                            |
-| ------------- | --------------------------------------------------------------------------------------------------------------- |
-| **`options`** | <code>{ color: string; buttonStyle?: <a href="#navigationbarbuttonstyle">NavigationBarButtonStyle</a>; }</code> |
+| Param         | Type                                                   |
+| ------------- | ------------------------------------------------------ |
+| **`options`** | <code>{ color: string; darkButtons?: boolean; }</code> |
 
 --------------------
 
@@ -44,10 +44,10 @@ setNavigationBarColor(options: { color: NavigationBarColor | string; buttonStyle
 ### getNavigationBarColor()
 
 ```typescript
-getNavigationBarColor() => Promise<{ color: string; buttonStyle: NavigationBarButtonStyle; }>
+getNavigationBarColor() => Promise<{ color: string; darkButtons: boolean; }>
 ```
 
-**Returns:** <code>Promise&lt;{ color: string; buttonStyle: <a href="#navigationbarbuttonstyle">NavigationBarButtonStyle</a>; }&gt;</code>
+**Returns:** <code>Promise&lt;{ color: string; darkButtons: boolean; }&gt;</code>
 
 --------------------
 
@@ -62,13 +62,5 @@ getNavigationBarColor() => Promise<{ color: string; buttonStyle: NavigationBarBu
 | **`WHITE`**       | <code>"#FFFFFF"</code>     |
 | **`BLACK`**       | <code>"#000000"</code>     |
 | **`TRANSPARENT`** | <code>"transparent"</code> |
-
-
-#### NavigationBarButtonStyle
-
-| Members     | Value                  |
-| ----------- | ---------------------- |
-| **`LIGHT`** | <code>"#FFFFFF"</code> |
-| **`DARK`**  | <code>"#000000"</code> |
 
 </docgen-api>
