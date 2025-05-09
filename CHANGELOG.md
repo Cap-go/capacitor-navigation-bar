@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.1.10](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.9...7.1.10) (2025-05-09)
+
+
+### Bug Fixes
+
+* Fixed linting issues ([4a0f51e](https://github.com/Cap-go/capacitor-navigation-bar/commit/4a0f51e5d57084a455624d670c0a9d2e626d65c0))
+
 ### [7.1.9](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.8...7.1.9) (2025-05-09)
 
 
