@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.1.26](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.25...7.1.26) (2025-08-18)
+
 ## [7.1.25](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.24...7.1.25) (2025-08-18)
 
 ## [7.1.24](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.23...7.1.24) (2025-08-11)
