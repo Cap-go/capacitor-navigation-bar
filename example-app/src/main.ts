@@ -2,7 +2,7 @@ import "./style.css";
 import { Capacitor } from "@capacitor/core";
 import {
   NavigationBar,
-  NavigationBarColor
+  NavigationBarColor,
 } from "@capgo/capacitor-navigation-bar";
 
 const app = document.querySelector<HTMLDivElement>("#app");
@@ -12,13 +12,13 @@ if (!app) {
 }
 
 const defaultCustomColor = "#2563eb";
-const colorChoices: Array<{ label: string; value: string }> = [
+const colorChoices: { label: string; value: string }[] = [
   { label: "System Default", value: NavigationBarColor.WHITE },
   { label: "Dark", value: NavigationBarColor.BLACK },
   { label: "Transparent", value: NavigationBarColor.TRANSPARENT },
   { label: "Deep Purple", value: "#5b21b6" },
   { label: "Sunset", value: "#f97316" },
-  { label: "Custom (use pickers below)", value: "__custom" }
+  { label: "Custom (use pickers below)", value: "__custom" },
 ];
 
 const presetOptions = colorChoices
@@ -70,9 +70,12 @@ app.innerHTML = `
 `;
 
 const colorSelect = document.querySelector<HTMLSelectElement>("#color-select")!;
-const customColorInput = document.querySelector<HTMLInputElement>("#custom-color")!;
-const customColorText = document.querySelector<HTMLInputElement>("#custom-color-text")!;
-const darkButtonsInput = document.querySelector<HTMLInputElement>("#dark-buttons")!;
+const customColorInput =
+  document.querySelector<HTMLInputElement>("#custom-color")!;
+const customColorText =
+  document.querySelector<HTMLInputElement>("#custom-color-text")!;
+const darkButtonsInput =
+  document.querySelector<HTMLInputElement>("#dark-buttons")!;
 const applyButton = document.querySelector<HTMLButtonElement>("#apply")!;
 const readButton = document.querySelector<HTMLButtonElement>("#read")!;
 const statusEl = document.querySelector<HTMLDivElement>("#status")!;
@@ -98,7 +101,9 @@ const getCustomColor = () => {
 };
 
 const getSelectedColor = () => {
-  return colorSelect.value === "__custom" ? getCustomColor() : colorSelect.value;
+  return colorSelect.value === "__custom"
+    ? getCustomColor()
+    : colorSelect.value;
 };
 
 const setStatus = (message: string, isError = false) => {
@@ -107,7 +112,7 @@ const setStatus = (message: string, isError = false) => {
 };
 
 const ensureCustomSelection = (color: string) => {
-  const matchedPreset = colorChoices.find(choice => choice.value === color);
+  const matchedPreset = colorChoices.find((choice) => choice.value === color);
   colorSelect.value = matchedPreset ? matchedPreset.value : "__custom";
 };
 
@@ -146,10 +151,10 @@ applyButton.addEventListener("click", async () => {
   try {
     await NavigationBar.setNavigationBarColor({
       color,
-      darkButtons: darkButtonsInput.checked
+      darkButtons: darkButtonsInput.checked,
     });
     setStatus(
-      `Navigation bar updated to ${color} with ${darkButtonsInput.checked ? "dark" : "light"} buttons.`
+      `Navigation bar updated to ${color} with ${darkButtonsInput.checked ? "dark" : "light"} buttons.`,
     );
   } catch (error) {
     console.error(error);
@@ -165,7 +170,9 @@ readButton.addEventListener("click", async () => {
     ensureCustomSelection(state.color);
     darkButtonsInput.checked = state.darkButtons;
     updatePreview(state.color);
-    setStatus(`Current color: ${state.color} | Dark buttons: ${state.darkButtons}`);
+    setStatus(
+      `Current color: ${state.color} | Dark buttons: ${state.darkButtons}`,
+    );
   } catch (error) {
     console.error(error);
     setStatus(`Failed to read navigation bar: ${String(error)}`, true);
@@ -173,7 +180,9 @@ readButton.addEventListener("click", async () => {
 });
 
 if (!Capacitor.isNativePlatform()) {
-  setStatus("Run on a native device or emulator to apply navigation bar changes.");
+  setStatus(
+    "Run on a native device or emulator to apply navigation bar changes.",
+  );
 }
 
 updatePreview(getSelectedColor());
