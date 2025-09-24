@@ -1,5 +1,10 @@
 :root {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   line-height: 1.5;
   color-scheme: light dark;
   color: #0f172a;
@@ -69,7 +74,9 @@ button {
   background: #2563eb;
   border-color: #2563eb;
   color: white;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
   margin-top: 12px;
 }
 
