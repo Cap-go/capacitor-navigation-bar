@@ -10,8 +10,11 @@
     "android/src/main/",
     "android/build.gradle",
     "dist/",
+    "ios/Sources/",
     "ios/Plugin/",
-    "CapgoCapacitorNavigationBar.podspec"
+    "CapgoCapacitorNavigationBar.podspec",
+    "Package.swift",
+    "ios/.gitignore"
   ],
   "author": "Cap-go <contact@capgo.app>",
   "license": "MIT",
