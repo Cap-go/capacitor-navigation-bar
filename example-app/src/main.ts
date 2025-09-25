@@ -73,15 +73,17 @@ app.innerHTML = `
   </section>
 `;
 
-const colorSelect = getRequiredElement<HTMLSelectElement>("#color-select");
-const customColorInput = getRequiredElement<HTMLInputElement>("#custom-color");
+const colorSelect = document.querySelector<HTMLSelectElement>("#color-select")!;
+const customColorInput =
+  document.querySelector<HTMLInputElement>("#custom-color")!;
 const customColorText =
-  getRequiredElement<HTMLInputElement>("#custom-color-text");
-const darkButtonsInput = getRequiredElement<HTMLInputElement>("#dark-buttons");
-const applyButton = getRequiredElement<HTMLButtonElement>("#apply");
-const readButton = getRequiredElement<HTMLButtonElement>("#read");
-const statusEl = getRequiredElement<HTMLDivElement>("#status");
-const preview = getRequiredElement<HTMLDivElement>("#preview");
+  document.querySelector<HTMLInputElement>("#custom-color-text")!;
+const darkButtonsInput =
+  document.querySelector<HTMLInputElement>("#dark-buttons")!;
+const applyButton = document.querySelector<HTMLButtonElement>("#apply")!;
+const readButton = document.querySelector<HTMLButtonElement>("#read")!;
+const statusEl = document.querySelector<HTMLDivElement>("#status")!;
+const preview = document.querySelector<HTMLDivElement>("#preview")!;
 
 const updatePreview = (color: string) => {
   preview.style.background = color;
