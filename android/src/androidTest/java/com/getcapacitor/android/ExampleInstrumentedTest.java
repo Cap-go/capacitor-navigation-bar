@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
     Context appContext = InstrumentationRegistry.getInstrumentation()
       .getTargetContext();
 
-    assertEquals("app.capgo.navigation.demo", appContext.getPackageName());
+    assertEquals(BuildConfig.LIBRARY_PACKAGE_NAME, appContext.getPackageName());
   }
 }
