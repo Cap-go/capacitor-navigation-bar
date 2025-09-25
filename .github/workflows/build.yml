@@ -98,7 +98,6 @@ jobs:
           tag: next
           provenance: true
       - name: Create GitHub release
-        if: github.run_attempt == 1
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
