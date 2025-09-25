@@ -13,29 +13,21 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/ionic-team/capacitor-swift-package.git", from: "7.0.0")
+        .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", from: "7.0.0")
     ],
     targets: [
         .target(
             name: "CapgoCapacitorNavigationBar",
             dependencies: [
-                "CapgoCapacitorNavigationBarObjc",
-                .product(name: "Capacitor", package: "capacitor-swift-package"),
-                .product(name: "CapacitorPlugin", package: "capacitor-swift-package")
+                .product(name: "Capacitor", package: "capacitor-swift-pm"),
+                .product(name: "Cordova", package: "capacitor-swift-pm")
             ],
             path: "ios/Sources/CapgoCapacitorNavigationBar"
         ),
-        .target(
-            name: "CapgoCapacitorNavigationBarObjc",
-            dependencies: [
-                .product(name: "CapacitorPlugin", package: "capacitor-swift-package")
-            ],
-            path: "ios/Sources/CapgoCapacitorNavigationBarObjc",
-            publicHeadersPath: ".",
-            cSettings: [
-                .headerSearchPath(".")
-            ]
-        )
+        .testTarget(
+            name: "CapgoCapacitorNavigationBarTests",
+            dependencies: ["CapgoCapacitorNavigationBar"],
+            path: "ios/Tests/CapgoCapacitorNavigationBarTests")
     ],
     swiftLanguageVersions: [
         .v5
