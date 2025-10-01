@@ -16,6 +16,24 @@ npm install @capgo/capacitor-navigation-bar
 npx cap sync
 ```
 
+## Example app
+
+An end-to-end sample project lives in `example/`. It showcases four actions: set the navigation bar
+color to green, red, or blue, and read the current color from the device.
+
+```bash
+cd example
+npm install
+npm run dev # preview in the browser
+
+# or sync to a native target
+npx cap sync ios
+npx cap sync android
+```
+
+Run the native project from Xcode or Android Studio and tap the buttons to see the navigation bar
+update in real time.
+
 ## API
 
 <docgen-index>

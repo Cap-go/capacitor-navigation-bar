@@ -2,18 +2,33 @@ package ee.forgr.capacitor_navigation_bar;
 
 import android.graphics.Color;
 import android.os.Build;
+import android.view.Gravity;
 import android.view.View;
-import android.view.WindowInsetsController;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.FrameLayout;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 import com.getcapacitor.util.WebColor;
-import java.util.Locale;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
+import java.util.Map;
+import java.util.WeakHashMap;
 
 @CapacitorPlugin(name = "NavigationBar")
 public class NavigationBarPlugin extends Plugin {
+
+  private static final String NAV_BAR_OVERLAY_TAG = "capgo-navigation-bar-overlay";
+  private View navigationBarOverlay;
+  private Integer currentNavigationBarColor;
+  private Boolean currentDarkButtons;
+  private final Map<View, int[]> originalPaddingMap = new WeakHashMap<>();
 
   @PluginMethod
   public void setNavigationBarColor(PluginCall call) {
@@ -31,71 +46,40 @@ public class NavigationBarPlugin extends Plugin {
       .executeOnMainThread(() -> {
         try {
           if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            if ("transparent".equalsIgnoreCase(color)) {
-              int flags = getActivity()
-                .getWindow()
-                .getDecorView()
-                .getSystemUiVisibility();
-              flags |=
-                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-              getActivity()
-                .getWindow()
-                .getDecorView()
-                .setSystemUiVisibility(flags);
-              getActivity()
-                .getWindow()
-                .setNavigationBarColor(Color.TRANSPARENT);
-            } else {
-              final int parsedColor = WebColor.parseColor(color);
-              View decor = getActivity().getWindow().getDecorView();
-              int flags = decor.getSystemUiVisibility();
-              flags &=
-                ~View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION &
-                ~View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-              decor.setSystemUiVisibility(flags);
-              getActivity().getWindow().setNavigationBarColor(parsedColor);
+            Window window = getActivity().getWindow();
+            WindowCompat.setDecorFitsSystemWindows(window, false);
+
+            View overlay = ensureNavigationBarOverlay(window);
+            if (overlay == null) {
+              call.reject("Unable to prepare navigation bar overlay view");
+              return;
             }
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-              WindowInsetsController insetsController = getActivity()
-                .getWindow()
-                .getInsetsController();
-              if (insetsController != null) {
-                if (darkButtons) {
-                  insetsController.setSystemBarsAppearance(
-                    WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS,
-                    WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
-                  );
-                } else {
-                  insetsController.setSystemBarsAppearance(
-                    0,
-                    WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
-                  );
-                }
-              }
-            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-              int flags = getActivity()
-                .getWindow()
-                .getDecorView()
-                .getSystemUiVisibility();
-              if (darkButtons) {
-                flags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
-              } else {
-                flags &= ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
-              }
-              getActivity()
-                .getWindow()
-                .getDecorView()
-                .setSystemUiVisibility(flags);
+            if ("transparent".equalsIgnoreCase(color)) {
+              overlay.setBackgroundColor(Color.TRANSPARENT);
+              overlay.setVisibility(View.GONE);
+              currentNavigationBarColor = Color.TRANSPARENT;
+            } else {
+              final int parsedColor = WebColor.parseColor(color);
+              overlay.setBackgroundColor(parsedColor);
+              overlay.setVisibility(View.VISIBLE);
+              currentNavigationBarColor = parsedColor;
             }
+
+            WindowInsetsControllerCompat controller =
+              WindowCompat.getInsetsController(window, window.getDecorView());
+            if (controller != null) {
+              controller.setAppearanceLightNavigationBars(darkButtons);
+            }
+            currentDarkButtons = darkButtons;
+
+            ViewCompat.requestApplyInsets(window.getDecorView());
+            call.resolve();
           } else {
             call.reject(
               "Navigation bar color customization is not supported on this Android version."
             );
-            return;
           }
-          call.resolve();
         } catch (IllegalArgumentException ex) {
           call.reject(
             "Invalid color provided. Must be a hex color (#RRGGBB) or 'transparent'"
@@ -111,36 +95,22 @@ public class NavigationBarPlugin extends Plugin {
         try {
           JSObject ret = new JSObject();
           if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            int intColor = getActivity().getWindow().getNavigationBarColor();
-            String hexColor = String.format("#%06X", (0xFFFFFF & intColor));
-            ret.put("color", hexColor);
+            Window window = getActivity().getWindow();
+            int resolvedColor = resolveCurrentNavigationBarColor(window);
+            ret.put("color", formatColorHex(resolvedColor));
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-              WindowInsetsController insetsController = getActivity()
-                .getWindow()
-                .getInsetsController();
-              if (insetsController != null) {
-                int appearance = insetsController.getSystemBarsAppearance();
-                boolean isLight =
-                  (appearance &
-                    WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS) !=
-                  0;
-                ret.put("darkButtons", !isLight);
+            Boolean darkButtonsState = currentDarkButtons;
+            if (darkButtonsState == null) {
+              WindowInsetsControllerCompat controller =
+                WindowCompat.getInsetsController(window, window.getDecorView());
+              if (controller != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                darkButtonsState = !controller.isAppearanceLightNavigationBars();
               } else {
-                ret.put("darkButtons", true);
+                darkButtonsState = true;
               }
-            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-              int flags = getActivity()
-                .getWindow()
-                .getDecorView()
-                .getSystemUiVisibility();
-              boolean isLight =
-                (flags & View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR) != 0;
-              ret.put("darkButtons", !isLight);
-            } else {
-              ret.put("darkButtons", true);
             }
 
+            ret.put("darkButtons", darkButtonsState);
             call.resolve(ret);
           } else {
             ret.put("color", "#000000");
@@ -151,5 +121,97 @@ public class NavigationBarPlugin extends Plugin {
           call.reject("Failed to get navigation bar color or button style", ex);
         }
       });
+  }
+
+  private View ensureNavigationBarOverlay(Window window) {
+    View decor = window.getDecorView();
+    if (!(decor instanceof ViewGroup)) {
+      return null;
+    }
+
+    ViewGroup decorGroup = (ViewGroup) decor;
+    View existing = decorGroup.findViewWithTag(NAV_BAR_OVERLAY_TAG);
+    if (existing instanceof View) {
+      navigationBarOverlay = existing;
+      return navigationBarOverlay;
+    }
+
+    View overlay = new View(getContext());
+    overlay.setTag(NAV_BAR_OVERLAY_TAG);
+    overlay.setClickable(false);
+    overlay.setFocusable(false);
+    overlay.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
+    FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
+      ViewGroup.LayoutParams.MATCH_PARENT,
+      0,
+      Gravity.BOTTOM
+    );
+    overlay.setLayoutParams(params);
+
+    ViewCompat.setOnApplyWindowInsetsListener(overlay, (v, insets) -> {
+      Insets navInsets = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
+      Insets tappableInsets = insets.getInsets(WindowInsetsCompat.Type.tappableElement());
+      int bottomInset = Math.max(navInsets.bottom, tappableInsets.bottom);
+      updateContentPadding(window, bottomInset);
+
+      ViewGroup.LayoutParams layoutParams = v.getLayoutParams();
+      if (layoutParams instanceof FrameLayout.LayoutParams) {
+        FrameLayout.LayoutParams frameParams = (FrameLayout.LayoutParams) layoutParams;
+        if (frameParams.height != bottomInset) {
+          frameParams.height = bottomInset;
+          v.setLayoutParams(frameParams);
+        }
+      }
+
+      return insets;
+    });
+
+    decorGroup.addView(overlay);
+    navigationBarOverlay = overlay;
+    return navigationBarOverlay;
+  }
+
+  private void updateContentPadding(Window window, int bottomInset) {
+    View content = window.findViewById(android.R.id.content);
+    if (content == null) {
+      return;
+    }
+
+    int[] originalPadding = originalPaddingMap.get(content);
+    if (originalPadding == null) {
+      originalPadding = new int[] {
+        content.getPaddingLeft(),
+        content.getPaddingTop(),
+        content.getPaddingRight(),
+        content.getPaddingBottom(),
+      };
+      originalPaddingMap.put(content, originalPadding);
+    }
+
+    content.setPadding(
+      originalPadding[0],
+      originalPadding[1],
+      originalPadding[2],
+      originalPadding[3] + bottomInset
+    );
+  }
+
+  private int resolveCurrentNavigationBarColor(Window window) {
+    if (currentNavigationBarColor != null) {
+      return currentNavigationBarColor;
+    }
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      return window.getNavigationBarColor();
+    }
+
+    return Color.BLACK;
+  }
+
+  private String formatColorHex(int color) {
+    if ((color >>> 24) == 0) {
+      return "#00000000";
+    }
+    return String.format("#%06X", (0xFFFFFF & color));
   }
 }

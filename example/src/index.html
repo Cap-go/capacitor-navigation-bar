@@ -10,23 +10,30 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
 
-    <script
-      type="module"
-      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/@ionic/pwa-elements@latest/dist/ionicpwaelements/ionicpwaelements.js"
-    ></script>
-
     <link rel="icon" type="image/x-icon" href="./assets/icon/favicon.ico" />
     <link rel="manifest" href="./manifest.json" />
     <link rel="stylesheet" href="./css/style.css" />
     <meta name="theme-color" content="#31d53d" />
   </head>
   <body>
-    <capacitor-welcome></capacitor-welcome>
+    <main class="app">
+      <h1>Navigation Bar Playground</h1>
+      <p class="hint">
+        Tap a color to update the native navigation bar using
+        <code>@capgo/capacitor-navigation-bar</code>.
+      </p>
 
-    <script src="./js/capacitor-welcome.js" type="module"></script>
+      <section class="button-grid">
+        <button class="action" data-nav-color="#137333">Set to Green</button>
+        <button class="action" data-nav-color="#c5221f">Set to Red</button>
+        <button class="action" data-nav-color="#1a73e8">Set to Blue</button>
+      </section>
+
+      <button class="action secondary" data-action="get-color">Get current navigation bar color</button>
+
+      <p class="status" data-status role="status">Waiting for an action…</p>
+    </main>
+
+    <script src="./js/navigation-demo.js" type="module"></script>
   </body>
 </html>
