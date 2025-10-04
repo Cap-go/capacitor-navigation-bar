@@ -1,8 +1,1 @@
-build
-dist
-example
-examples
-docs
-example-app/android/
-example-app/ios/
-example-app/node_modules/
+example-app

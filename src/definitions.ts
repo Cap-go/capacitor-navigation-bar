@@ -1,7 +1,7 @@
 export enum NavigationBarColor {
-  WHITE = "#FFFFFF",
-  BLACK = "#000000",
-  TRANSPARENT = "transparent",
+  WHITE = '#FFFFFF',
+  BLACK = '#000000',
+  TRANSPARENT = 'transparent',
 }
 
 export interface NavigationBarPlugin {
