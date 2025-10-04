@@ -17,6 +17,9 @@ DerivedData/
 .netrc
 
 
+.codex/*
+.codex
+
 # macOS files
 .DS_Store
 
