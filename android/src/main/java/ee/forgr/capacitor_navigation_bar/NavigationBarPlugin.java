@@ -40,82 +40,84 @@ public class NavigationBarPlugin extends Plugin {
             return;
         }
 
-        getBridge().executeOnMainThread(() -> {
-            try {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    Window window = getActivity().getWindow();
+        getBridge()
+            .executeOnMainThread(() -> {
+                try {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        Window window = getActivity().getWindow();
 
-                    final boolean isTransparent = "transparent".equalsIgnoreCase(color);
+                        final boolean isTransparent = "transparent".equalsIgnoreCase(color);
 
-                    if (isTransparent) {
-                        WindowCompat.setDecorFitsSystemWindows(window, true);
-                        removeNavigationBarOverlay(window);
-                        window.setNavigationBarColor(Color.TRANSPARENT);
-                        currentNavigationBarColor = null;
-                    } else {
-                        View overlay = ensureNavigationBarOverlay(window, this.bridge.getWebView());
-                        if (overlay == null) {
-                            call.reject("Unable to prepare navigation bar overlay view");
-                            return;
+                        if (isTransparent) {
+                            WindowCompat.setDecorFitsSystemWindows(window, true);
+                            removeNavigationBarOverlay(window);
+                            window.setNavigationBarColor(Color.TRANSPARENT);
+                            currentNavigationBarColor = null;
+                        } else {
+                            View overlay = ensureNavigationBarOverlay(window, this.bridge.getWebView());
+                            if (overlay == null) {
+                                call.reject("Unable to prepare navigation bar overlay view");
+                                return;
+                            }
+
+                            final int parsedColor = WebColor.parseColor(color);
+                            overlay.setBackgroundColor(parsedColor);
+                            overlay.setVisibility(View.VISIBLE);
+                            overlay.bringToFront();
+                            window.setNavigationBarColor(Color.TRANSPARENT);
+                            currentNavigationBarColor = parsedColor;
+                            configureNavigationBarOverlay(window);
                         }
 
-                        final int parsedColor = WebColor.parseColor(color);
-                        overlay.setBackgroundColor(parsedColor);
-                        overlay.setVisibility(View.VISIBLE);
-                        overlay.bringToFront();
-                        window.setNavigationBarColor(Color.TRANSPARENT);
-                        currentNavigationBarColor = parsedColor;
-                        configureNavigationBarOverlay(window);
-                    }
+                        WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(window, window.getDecorView());
+                        if (controller != null) {
+                            controller.setAppearanceLightNavigationBars(darkButtons);
+                        }
+                        currentDarkButtons = darkButtons;
 
-                    WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(window, window.getDecorView());
-                    if (controller != null) {
-                        controller.setAppearanceLightNavigationBars(darkButtons);
+                        ViewCompat.requestApplyInsets(window.getDecorView());
+                        call.resolve();
+                    } else {
+                        call.reject("Navigation bar color customization is not supported on this Android version.");
                     }
-                    currentDarkButtons = darkButtons;
-
-                    ViewCompat.requestApplyInsets(window.getDecorView());
-                    call.resolve();
-                } else {
-                    call.reject("Navigation bar color customization is not supported on this Android version.");
+                } catch (IllegalArgumentException ex) {
+                    call.reject("Invalid color provided. Must be a hex color (#RRGGBB) or 'transparent'");
                 }
-            } catch (IllegalArgumentException ex) {
-                call.reject("Invalid color provided. Must be a hex color (#RRGGBB) or 'transparent'");
-            }
-        });
+            });
     }
 
     @PluginMethod
     public void getNavigationBarColor(PluginCall call) {
-        getBridge().executeOnMainThread(() -> {
-            try {
-                JSObject ret = new JSObject();
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    Window window = getActivity().getWindow();
-                    int resolvedColor = resolveCurrentNavigationBarColor(window);
-                    ret.put("color", formatColorHex(resolvedColor));
+        getBridge()
+            .executeOnMainThread(() -> {
+                try {
+                    JSObject ret = new JSObject();
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        Window window = getActivity().getWindow();
+                        int resolvedColor = resolveCurrentNavigationBarColor(window);
+                        ret.put("color", formatColorHex(resolvedColor));
 
-                    Boolean darkButtonsState = currentDarkButtons;
-                    if (darkButtonsState == null) {
-                        WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(window, window.getDecorView());
-                        if (controller != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                            darkButtonsState = !controller.isAppearanceLightNavigationBars();
-                        } else {
-                            darkButtonsState = true;
+                        Boolean darkButtonsState = currentDarkButtons;
+                        if (darkButtonsState == null) {
+                            WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(window, window.getDecorView());
+                            if (controller != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                darkButtonsState = !controller.isAppearanceLightNavigationBars();
+                            } else {
+                                darkButtonsState = true;
+                            }
                         }
-                    }
 
-                    ret.put("darkButtons", darkButtonsState);
-                    call.resolve(ret);
-                } else {
-                    ret.put("color", "#000000");
-                    ret.put("darkButtons", true);
-                    call.resolve(ret);
+                        ret.put("darkButtons", darkButtonsState);
+                        call.resolve(ret);
+                    } else {
+                        ret.put("color", "#000000");
+                        ret.put("darkButtons", true);
+                        call.resolve(ret);
+                    }
+                } catch (Exception ex) {
+                    call.reject("Failed to get navigation bar color or button style", ex);
                 }
-            } catch (Exception ex) {
-                call.reject("Failed to get navigation bar color or button style", ex);
-            }
-        });
+            });
     }
 
     private View ensureNavigationBarOverlay(Window window, WebView webView) {
