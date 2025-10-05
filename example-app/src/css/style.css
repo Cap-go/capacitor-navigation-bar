@@ -1,0 +1,121 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  width: min(480px, 90%);
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+.app h1 {
+  margin: 0 0 8px;
+  font-size: clamp(24px, 4vw, 32px);
+  letter-spacing: 0.02em;
+}
+
+.hint {
+  margin: 0 0 24px;
+  line-height: 1.6;
+  color: rgba(226, 232, 240, 0.85);
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.action {
+  appearance: none;
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #0f172a;
+  background: linear-gradient(135deg, #facc15 0%, #f97316 100%);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.action:hover,
+.action:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(250, 204, 21, 0.35);
+  outline: none;
+}
+
+.action:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.secondary {
+  width: 100%;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+  color: #0b1120;
+}
+
+.options {
+  margin: 16px 0 20px;
+  padding: 18px 16px;
+  border-radius: 16px;
+  background: rgba(45, 212, 191, 0.16);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+}
+
+.toggle-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.toggle-control__input {
+  width: 22px;
+  height: 22px;
+  accent-color: #22d3ee;
+  cursor: pointer;
+}
+
+.toggle-control__label {
+  flex: 1;
+}
+
+.status {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(15, 118, 110, 0.25);
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(241, 245, 249, 0.9);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.status[data-state="error"] {
+  background: rgba(220, 38, 38, 0.35);
+  color: #fecaca;
+}

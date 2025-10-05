@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "app.capgo.navigation.demo"
+    namespace "app.capgo.plugin.NavigationBar"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "app.capgo.navigation.demo"
+        applicationId "app.capgo.plugin.NavigationBar"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -1,4 +1,4 @@
-package app.capgo.navigation.demo;
+package app.capgo.plugin.NavigationBar;
 
 import com.getcapacitor.BridgeActivity;
 

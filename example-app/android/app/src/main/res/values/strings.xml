@@ -1,6 +1,6 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8' ?>
 <resources>
-    <string name="app_name">Navigation Bar Demo</string>
+    <string name="app_name">Navigation Bar example app</string>
     <string name="title_activity_main">Navigation Bar Demo</string>
     <string name="package_name">app.capgo.navigation.demo</string>
     <string name="custom_url_scheme">app.capgo.navigation.demo</string>
