@@ -101,7 +101,7 @@ public class NavigationBarPlugin extends Plugin {
                         if (darkButtonsState == null) {
                             WindowInsetsControllerCompat controller = WindowCompat.getInsetsController(window, window.getDecorView());
                             if (controller != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                                darkButtonsState = !controller.isAppearanceLightNavigationBars();
+                                darkButtonsState = controller.isAppearanceLightNavigationBars();
                             } else {
                                 darkButtonsState = true;
                             }
