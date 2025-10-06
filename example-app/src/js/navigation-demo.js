@@ -21,6 +21,10 @@ const logStatus = (message, isError = false) => {
 };
 
 const getDarkButtonsPreference = (hex) => {
+  if (hex === "transparent") {
+    return false; // Use light buttons for transparent backgrounds
+  }
+
   if (typeof hex !== "string" || !hex.startsWith("#") || hex.length < 7) {
     return true;
   }

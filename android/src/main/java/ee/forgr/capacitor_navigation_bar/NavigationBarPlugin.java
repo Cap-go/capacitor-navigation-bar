@@ -119,7 +119,7 @@ public class NavigationBarPlugin extends Plugin {
     }
 
     private View ensureNavigationBarOverlay(Window window, WebView webView) {
-        CoordinatorLayout contentLayout = webView.getParent() instanceof CoordinatorLayout ? (CoordinatorLayout) webView.getParent() : null;
+        ViewGroup contentLayout = webView.getParent() instanceof ViewGroup ? (ViewGroup) webView.getParent() : null;
         if (contentLayout == null) {
             return null;
         }
