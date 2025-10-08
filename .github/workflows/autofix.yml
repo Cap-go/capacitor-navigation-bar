@@ -17,7 +17,7 @@ jobs:
           bun-version: latest
       - name: Install dependencies
         run: bun install
-      - name: Lint
+      - name: Lint 
         id: lint_code
         run: npm run fmt
       - uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27

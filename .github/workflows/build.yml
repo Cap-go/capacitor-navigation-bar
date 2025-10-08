@@ -51,6 +51,7 @@ jobs:
         id: build_code
         run: npm run verify:android
   build_ios:
+    needs: lint
     runs-on: macOS-latest
     steps:
       - name: Check out
