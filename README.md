@@ -78,8 +78,8 @@ getNavigationBarColor() => Promise<{ color: string; darkButtons: boolean; }>
 
 | Members           | Value                      |
 | ----------------- | -------------------------- |
-| **`WHITE`**       | <code>"#FFFFFF"</code>     |
-| **`BLACK`**       | <code>"#000000"</code>     |
-| **`TRANSPARENT`** | <code>"transparent"</code> |
+| **`WHITE`**       | <code>'#FFFFFF'</code>     |
+| **`BLACK`**       | <code>'#000000'</code>     |
+| **`TRANSPARENT`** | <code>'transparent'</code> |
 
 </docgen-api>
