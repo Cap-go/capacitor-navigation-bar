@@ -4,7 +4,7 @@ android {
     namespace "app.capgo.navigation.demo"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "app.capgo.navigation.demo"
+        applicationId "app.capgo.navigation.bar"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
