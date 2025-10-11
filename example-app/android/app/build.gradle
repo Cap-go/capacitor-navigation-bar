@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "app.capgo.navigation.demo"
+    namespace "app.capgo.navigation.bar"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "app.capgo.navigation.bar"

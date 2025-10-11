@@ -2,7 +2,7 @@ import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
   appId: "app.capgo.navigation.bar",
-  appName: "Navigation Bar Demo",
+  appName: "Navigation Bar Example",
   webDir: "dist",
   bundledWebRuntime: false,
 };
