@@ -5,9 +5,9 @@ import Capacitor
  * Please read the Capacitor iOS Plugin Development Guide
  * here: https://capacitorjs.com/docs/plugins/ios
  */
-@objc(NavigationBarPlugin)
-public class NavigationBarPlugin: CAPPlugin, CAPBridgedPlugin {
-    public let identifier = "NavigationBarPlugin"
+@objc(CapgoNavigationBarPlugin)
+public class CapgoNavigationBarPlugin: CAPPlugin, CAPBridgedPlugin {
+    public let identifier = "CapgoNavigationBarPlugin"
     public let jsName = "NavigationBar"
     public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "setNavigationBarColor", returnType: CAPPluginReturnPromise),

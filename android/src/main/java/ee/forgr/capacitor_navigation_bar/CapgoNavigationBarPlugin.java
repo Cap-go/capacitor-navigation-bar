@@ -13,7 +13,7 @@ import com.getcapacitor.util.WebColor;
 import java.util.Locale;
 
 @CapacitorPlugin(name = "NavigationBar")
-public class NavigationBarPlugin extends Plugin {
+public class CapgoNavigationBarPlugin extends Plugin {
 
     @PluginMethod
     public void setNavigationBarColor(PluginCall call) {

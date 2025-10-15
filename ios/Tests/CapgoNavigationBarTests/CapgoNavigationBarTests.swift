@@ -1,8 +1,8 @@
 import XCTest
 import Capacitor
-@testable import CapgoCapacitorNavigationBar
+@testable import CapgoNavigationBar
 
-final class CapgoCapacitorNavigationBarTests: XCTestCase {
+final class CapgoNavigationBarTests: XCTestCase {
     private func makeCall(method: String, options: [String: Any] = [:], errorHandler: @escaping (CAPPluginCallError) -> Void) -> CAPPluginCall {
         CAPPluginCall(
             callbackId: "test",

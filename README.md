@@ -18,21 +18,8 @@ npx cap sync
 
 ## Example Apps
 
-- `example`: Default Capacitor starter project kept for quick scaffolding tests.
 - `example-app`: Interactive showcase that exercises all plugin options (color presets, custom hex, dark buttons, state reading).
 
-## iOS
-
-### Swift Package Manager
-
-1. In Xcode, choose *File → Add Packages…*
-2. Enter `https://github.com/Cap-go/capacitor-navigation-bar.git`
-3. Select the `CapgoCapacitorNavigationBar` product and choose the app target that should link it.
-
-### CocoaPods
-
-1. In your app's `Podfile`, add `pod 'CapgoCapacitorNavigationBar', :path => '../node_modules/@capgo/capacitor-navigation-bar'` inside the Capacitor target.
-2. Run `pod install`.
 
 ## API
 
