@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.2.0](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.33...7.2.0) (2025-10-15)
+
+
+### Features
+
+* add SPM support + update example-app ([29ef8d1](https://github.com/Cap-go/capacitor-navigation-bar/commit/29ef8d1dc82d68ebfc9640dca533672f042b6382))
+
+
+### Bug Fixes
+
+* apply CodeRabbit suggestions ([0c2a7cc](https://github.com/Cap-go/capacitor-navigation-bar/commit/0c2a7cc1ba3a779fa77e467692c342f7162fb624))
+* build navigation bar ([7852977](https://github.com/Cap-go/capacitor-navigation-bar/commit/7852977cbe09b011b0b7537d91257dc40a566a74))
+* **deps:** update dependency androidx.appcompat:appcompat to v1.7.1 ([#162](https://github.com/Cap-go/capacitor-navigation-bar/issues/162)) ([642082f](https://github.com/Cap-go/capacitor-navigation-bar/commit/642082f263e870c061a3237271d30fdfbb1ff5f3))
+* **deps:** update dependency com.google.gms:google-services to v4.4.4 ([#163](https://github.com/Cap-go/capacitor-navigation-bar/issues/163)) ([b5340fe](https://github.com/Cap-go/capacitor-navigation-bar/commit/b5340fe664d120928e6951ef3c393f975578604a))
+* ios new arch ([fc34950](https://github.com/Cap-go/capacitor-navigation-bar/commit/fc3495080e28b6e53e2d2a9ae2c0065a817e06f1))
+* **ios:** spm support ([3c10c0d](https://github.com/Cap-go/capacitor-navigation-bar/commit/3c10c0dbb85961f2fd5f9969b5c162bb8f2197a5))
+* lint config ([f8e74c7](https://github.com/Cap-go/capacitor-navigation-bar/commit/f8e74c75b3937da6b0dad9122471fe18d4380476))
+* lock and lint ([5966401](https://github.com/Cap-go/capacitor-navigation-bar/commit/596640104da847f4a479b12a6e2ddc1f14815479))
+* remove all old code ([d412d3b](https://github.com/Cap-go/capacitor-navigation-bar/commit/d412d3bda19b88b704f4aee5916b2377b1b57761))
+* switch to ios new arch ([0479d7b](https://github.com/Cap-go/capacitor-navigation-bar/commit/0479d7bd530b3c3e651c7b991dc303b4978ce77d))
+
 ## [7.1.33](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.32...7.1.33) (2025-09-29)
 
 ## [7.1.32](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.1.31...7.1.32) (2025-09-22)
