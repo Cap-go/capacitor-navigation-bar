@@ -12,7 +12,7 @@
     "dist/",
     "ios/Sources/",
     "ios/Tests",
-    "CapgoNavigationBar.podspec",
+    "CapgoCapacitorNavigationBar.podspec",
     "Package.swift",
     "ios/.gitignore"
   ],
