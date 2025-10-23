@@ -14,4 +14,8 @@ export class NavigationBarWeb extends WebPlugin implements NavigationBarPlugin {
     console.log('Cannot getNavigationBarColor on web');
     return { color: '#000000', darkButtons: true };
   }
+
+  async getPluginVersion(): Promise<{ version: string }> {
+    return { version: 'web' };
+  }
 }

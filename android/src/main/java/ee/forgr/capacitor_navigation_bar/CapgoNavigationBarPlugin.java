@@ -15,6 +15,8 @@ import java.util.Locale;
 @CapacitorPlugin(name = "NavigationBar")
 public class CapgoNavigationBarPlugin extends Plugin {
 
+    private final String PLUGIN_VERSION = "";
+
     @PluginMethod
     public void setNavigationBarColor(PluginCall call) {
         final String color = call.getString("color");
@@ -111,5 +113,16 @@ public class CapgoNavigationBarPlugin extends Plugin {
                 call.reject("Failed to get navigation bar color or button style", ex);
             }
         });
+    }
+
+    @PluginMethod
+    public void getPluginVersion(final PluginCall call) {
+        try {
+            final JSObject ret = new JSObject();
+            ret.put("version", this.PLUGIN_VERSION);
+            call.resolve(ret);
+        } catch (final Exception e) {
+            call.reject("Could not get plugin version", e);
+        }
     }
 }

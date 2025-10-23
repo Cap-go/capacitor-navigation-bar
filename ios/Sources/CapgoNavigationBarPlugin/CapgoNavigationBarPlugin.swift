@@ -7,11 +7,13 @@ import Capacitor
  */
 @objc(CapgoNavigationBarPlugin)
 public class CapgoNavigationBarPlugin: CAPPlugin, CAPBridgedPlugin {
+    private let PLUGIN_VERSION: String = ""
     public let identifier = "CapgoNavigationBarPlugin"
     public let jsName = "NavigationBar"
     public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "setNavigationBarColor", returnType: CAPPluginReturnPromise),
-        CAPPluginMethod(name: "getNavigationBarColor", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "getNavigationBarColor", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "getPluginVersion", returnType: CAPPluginReturnPromise)
     ]
     @objc func setNavigationBarColor(_ call: CAPPluginCall) {
         let color = call.getString("color") ?? ""
@@ -22,4 +24,9 @@ public class CapgoNavigationBarPlugin: CAPPlugin, CAPBridgedPlugin {
         print("Cannot get navigation bar color in ios")
         call.reject("Cannot get navigation bar color in ios")
     }
+
+    @objc func getPluginVersion(_ call: CAPPluginCall) {
+        call.resolve(["version": self.PLUGIN_VERSION])
+    }
+
 }
