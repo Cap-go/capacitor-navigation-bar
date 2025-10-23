@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.3.0](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.2.3...7.3.0) (2025-10-23)
+
+
+### Features
+
+* add plugin version retrieval methods and update workflows for changelog generation ([b884563](https://github.com/Cap-go/capacitor-navigation-bar/commit/b8845639ec4cfff82c5254ccab270ec497bbf046))
+
+
+### Bug Fixes
+
+* remove unnecessary content field from Discord release webhook ([f56447b](https://github.com/Cap-go/capacitor-navigation-bar/commit/f56447b246e0b92a374ea2e4fe7dbba721b45b8a))
+
 ## [7.2.3](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.2.2...7.2.3) (2025-10-20)
 
 

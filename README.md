@@ -27,6 +27,7 @@ npx cap sync
 
 * [`setNavigationBarColor(...)`](#setnavigationbarcolor)
 * [`getNavigationBarColor()`](#getnavigationbarcolor)
+* [`getPluginVersion()`](#getpluginversion)
 * [Enums](#enums)
 
 </docgen-index>
@@ -54,6 +55,19 @@ getNavigationBarColor() => Promise<{ color: string; darkButtons: boolean; }>
 ```
 
 **Returns:** <code>Promise&lt;{ color: string; darkButtons: boolean; }&gt;</code>
+
+--------------------
+
+
+### getPluginVersion()
+
+```typescript
+getPluginVersion() => Promise<{ version: string; }>
+```
+
+Get the native Capacitor plugin version
+
+**Returns:** <code>Promise&lt;{ version: string; }&gt;</code>
 
 --------------------
 
