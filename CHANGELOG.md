@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.3.2](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.3.1...7.3.2) (2025-10-23)
+
+
+### Bug Fixes
+
+* enhance documentation for navigation bar plugin methods and parameters ([69fe74a](https://github.com/Cap-go/capacitor-navigation-bar/commit/69fe74a0d1e79b6010c1da29c138e2c3ab8dcbd2))
+
 ## [7.3.1](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.3.0...7.3.1) (2025-10-23)
 
 
