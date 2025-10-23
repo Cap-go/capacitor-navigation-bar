@@ -35,15 +35,21 @@ npx cap sync
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
+Capacitor Navigation Bar Plugin for customizing the Android navigation bar.
+
 ### setNavigationBarColor(...)
 
 ```typescript
 setNavigationBarColor(options: { color: NavigationBarColor | string; darkButtons?: boolean; }) => Promise<void>
 ```
 
-| Param         | Type                                                   |
-| ------------- | ------------------------------------------------------ |
-| **`options`** | <code>{ color: string; darkButtons?: boolean; }</code> |
+Set the navigation bar color and button theme.
+
+| Param         | Type                                                   | Description                                   |
+| ------------- | ------------------------------------------------------ | --------------------------------------------- |
+| **`options`** | <code>{ color: string; darkButtons?: boolean; }</code> | - Configuration for navigation bar appearance |
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -54,7 +60,11 @@ setNavigationBarColor(options: { color: NavigationBarColor | string; darkButtons
 getNavigationBarColor() => Promise<{ color: string; darkButtons: boolean; }>
 ```
 
+Get the current navigation bar color and button theme.
+
 **Returns:** <code>Promise&lt;{ color: string; darkButtons: boolean; }&gt;</code>
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -65,9 +75,11 @@ getNavigationBarColor() => Promise<{ color: string; darkButtons: boolean; }>
 getPluginVersion() => Promise<{ version: string; }>
 ```
 
-Get the native Capacitor plugin version
+Get the native Capacitor plugin version.
 
 **Returns:** <code>Promise&lt;{ version: string; }&gt;</code>
+
+**Since:** 1.0.0
 
 --------------------
 
@@ -77,10 +89,10 @@ Get the native Capacitor plugin version
 
 #### NavigationBarColor
 
-| Members           | Value                      |
-| ----------------- | -------------------------- |
-| **`WHITE`**       | <code>'#FFFFFF'</code>     |
-| **`BLACK`**       | <code>'#000000'</code>     |
-| **`TRANSPARENT`** | <code>'transparent'</code> |
+| Members           | Value                      | Description       |
+| ----------------- | -------------------------- | ----------------- |
+| **`WHITE`**       | <code>'#FFFFFF'</code>     | White color       |
+| **`BLACK`**       | <code>'#000000'</code>     | Black color       |
+| **`TRANSPARENT`** | <code>'transparent'</code> | Transparent color |
 
 </docgen-api>
