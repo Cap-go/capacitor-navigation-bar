@@ -9,6 +9,10 @@
 
 Set navigation bar color for android lolipop and higher
 
+## Documentation
+
+The most complete doc is available here: https://capgo.app/docs/plugins/navigation-bar/
+
 ## Install
 
 ```bash
