@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.3.4](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.3.3...7.3.4) (2025-10-26)
+
+
+### Bug Fixes
+
+* prevent bump for app ([69e8a46](https://github.com/Cap-go/capacitor-navigation-bar/commit/69e8a46134d5d2cde470345b5bcad689b43c5bc0))
+
 ## [7.3.3](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.3.2...7.3.3) (2025-10-26)
 
 ## [7.3.2](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.3.1...7.3.2) (2025-10-23)
