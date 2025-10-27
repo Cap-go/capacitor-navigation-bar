@@ -15,7 +15,7 @@ import java.util.Locale;
 @CapacitorPlugin(name = "NavigationBar")
 public class CapgoNavigationBarPlugin extends Plugin {
 
-    private final String PLUGIN_VERSION = "7.3.7";
+    private final String PLUGIN_VERSION = "7.3.8";
 
     @PluginMethod
     public void setNavigationBarColor(PluginCall call) {

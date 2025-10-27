@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.3.8](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.3.7...7.3.8) (2025-10-27)
+
+
+### Bug Fixes
+
+* CI/CD config ([1cc9500](https://github.com/Cap-go/capacitor-navigation-bar/commit/1cc950090b8bb3b13d4689b309933e1b3c5d0327))
+* update github action ([9a3d50c](https://github.com/Cap-go/capacitor-navigation-bar/commit/9a3d50c7b413cebf9789fcc053d5c69dd867f9bf))
+
 ## [7.3.7](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.3.6...7.3.7) (2025-10-27)
 
 ## [7.3.6](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.3.5...7.3.6) (2025-10-27)
