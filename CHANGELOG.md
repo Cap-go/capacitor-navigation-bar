@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [7.3.10](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.3.9...7.3.10) (2025-10-30)
+
+
+### Bug Fixes
+
+* pluginVersion lint issue ([9024f04](https://github.com/Cap-go/capacitor-navigation-bar/commit/9024f0444b6c19743031907a6af7e65a217c8e4f))
+
 ## [7.3.9](https://github.com/Cap-go/capacitor-navigation-bar/compare/7.3.8...7.3.9) (2025-10-29)
 
 
