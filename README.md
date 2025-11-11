@@ -7,7 +7,7 @@
 
 # capacitor-navigation-bar
 
-Set navigation bar color for android lolipop and higher
+Set navigation bar color for android lollipop and higher
 
 ## Documentation
 
