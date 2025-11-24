@@ -17,7 +17,7 @@
     "ios/.gitignore"
   ],
   "author": "Cap-go <contact@capgo.app>",
-  "license": "MIT",
+  "license": "MPL-2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Cap-go/capacitor-navigation-bar.git"
