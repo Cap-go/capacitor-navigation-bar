@@ -2,14 +2,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "CapgoNavigationBar",
+    name: "CapgoCapacitorNavigationBar",
     platforms: [
         .iOS(.v14)
     ],
     products: [
         .library(
-            name: "CapgoNavigationBar",
-            targets: ["CapgoNavigationBar"]
+            name: "CapgoCapacitorNavigationBar",
+            targets: ["CapgoCapacitorNavigationBar"]
         )
     ],
     dependencies: [
@@ -17,7 +17,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "CapgoNavigationBar",
+            name: "CapgoCapacitorNavigationBar",
             dependencies: [
                 .product(name: "Capacitor", package: "capacitor-swift-pm"),
                 .product(name: "Cordova", package: "capacitor-swift-pm")
@@ -25,8 +25,8 @@ let package = Package(
             path: "ios/Sources/CapgoNavigationBarPlugin"
         ),
         .testTarget(
-            name: "CapgoNavigationBarTests",
-            dependencies: ["CapgoNavigationBar"],
+            name: "CapgoCapacitorNavigationBarTests",
+            dependencies: ["CapgoCapacitorNavigationBar"],
             path: "ios/Tests/CapgoNavigationBarTests")
     ],
     swiftLanguageVersions: [
