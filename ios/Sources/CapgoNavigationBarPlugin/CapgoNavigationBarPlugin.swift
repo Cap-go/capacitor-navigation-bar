@@ -7,7 +7,7 @@ import Capacitor
  */
 @objc(CapgoNavigationBarPlugin)
 public class CapgoNavigationBarPlugin: CAPPlugin, CAPBridgedPlugin {
-    private let pluginVersion: String = "8.0.15"
+    private let pluginVersion: String = "8.0.16"
     public let identifier = "CapgoNavigationBarPlugin"
     public let jsName = "NavigationBar"
     public let pluginMethods: [CAPPluginMethod] = [
