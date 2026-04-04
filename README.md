@@ -55,14 +55,14 @@ Capacitor Navigation Bar Plugin for customizing the Android navigation bar.
 ### setNavigationBarColor(...)
 
 ```typescript
-setNavigationBarColor(options: { color: NavigationBarColor | string; darkButtons?: boolean; }) => Promise<void>
+setNavigationBarColor(options: { color: NavigationBarColor | string; darkButtons?: boolean; dividerColor?: NavigationBarColor | string; }) => Promise<void>
 ```
 
 Set the navigation bar color and button theme.
 
-| Param         | Type                                                   | Description                                   |
-| ------------- | ------------------------------------------------------ | --------------------------------------------- |
-| **`options`** | <code>{ color: string; darkButtons?: boolean; }</code> | - Configuration for navigation bar appearance |
+| Param         | Type                                                                          | Description                                   |
+| ------------- | ----------------------------------------------------------------------------- | --------------------------------------------- |
+| **`options`** | <code>{ color: string; darkButtons?: boolean; dividerColor?: string; }</code> | - Configuration for navigation bar appearance |
 
 **Since:** 1.0.0
 

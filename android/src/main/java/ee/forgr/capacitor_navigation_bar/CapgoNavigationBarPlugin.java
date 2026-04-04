@@ -21,6 +21,7 @@ public class CapgoNavigationBarPlugin extends Plugin {
     public void setNavigationBarColor(PluginCall call) {
         final String color = call.getString("color");
         final boolean darkButtons = Boolean.TRUE.equals(call.getBoolean("darkButtons", true));
+        final String dividerColor = call.getString("dividerColor");
 
         if (color == null) {
             call.reject("Color must be provided");
@@ -29,11 +30,16 @@ public class CapgoNavigationBarPlugin extends Plugin {
 
         getBridge().executeOnMainThread(() -> {
             try {
+                final Integer parsedDividerColor = dividerColor != null ? WebColor.parseColor(dividerColor) : null;
+
                 if ("transparent".equalsIgnoreCase(color)) {
                     int flags = getActivity().getWindow().getDecorView().getSystemUiVisibility();
                     flags |= View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
                     getActivity().getWindow().getDecorView().setSystemUiVisibility(flags);
                     getActivity().getWindow().setNavigationBarColor(Color.TRANSPARENT);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P && parsedDividerColor != null) {
+                        getActivity().getWindow().setNavigationBarDividerColor(parsedDividerColor);
+                    }
                 } else {
                     final int parsedColor = WebColor.parseColor(color);
                     View decor = getActivity().getWindow().getDecorView();
@@ -41,6 +47,9 @@ public class CapgoNavigationBarPlugin extends Plugin {
                     flags &= ~View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION & ~View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
                     decor.setSystemUiVisibility(flags);
                     getActivity().getWindow().setNavigationBarColor(parsedColor);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P && parsedDividerColor != null) {
+                        getActivity().getWindow().setNavigationBarDividerColor(parsedDividerColor);
+                    }
                 }
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -66,7 +75,7 @@ public class CapgoNavigationBarPlugin extends Plugin {
                 }
                 call.resolve();
             } catch (IllegalArgumentException ex) {
-                call.reject("Invalid color provided. Must be a hex color (#RRGGBB) or 'transparent'");
+                call.reject("Invalid color provided. color and dividerColor must be hex colors (#RRGGBB) or color can be 'transparent'");
             }
         });
     }

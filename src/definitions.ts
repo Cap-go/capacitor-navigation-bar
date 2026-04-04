@@ -38,6 +38,13 @@ export interface NavigationBarPlugin {
    *   color: '#FF5733',
    *   darkButtons: false
    * });
+   *
+   * // Set a custom divider color on Android 9+
+   * await NavigationBar.setNavigationBarColor({
+   *   color: NavigationBarColor.WHITE,
+   *   darkButtons: true,
+   *   dividerColor: '#D9D9D9'
+   * });
    * ```
    */
   setNavigationBarColor(options: {
@@ -45,6 +52,8 @@ export interface NavigationBarPlugin {
     color: NavigationBarColor | string;
     /** Whether to use dark buttons. Defaults to true if not specified */
     darkButtons?: boolean;
+    /** Divider color for Android 9+ (API 28+). Accepts predefined colors or any valid hex color code */
+    dividerColor?: NavigationBarColor | string;
   }): Promise<void>;
 
   /**
