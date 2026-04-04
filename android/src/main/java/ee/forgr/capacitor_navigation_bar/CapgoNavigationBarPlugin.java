@@ -30,7 +30,9 @@ public class CapgoNavigationBarPlugin extends Plugin {
 
         getBridge().executeOnMainThread(() -> {
             try {
-                final Integer parsedDividerColor = dividerColor != null ? WebColor.parseColor(dividerColor) : null;
+                final Integer parsedDividerColor = Build.VERSION.SDK_INT >= Build.VERSION_CODES.P && dividerColor != null
+                    ? WebColor.parseColor(dividerColor)
+                    : null;
 
                 if ("transparent".equalsIgnoreCase(color)) {
                     int flags = getActivity().getWindow().getDecorView().getSystemUiVisibility();
