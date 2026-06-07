@@ -1,3 +1,4 @@
+import { CapacitorUpdater } from '@capgo/capacitor-updater';
 import "./style.css";
 import { Capacitor } from "@capacitor/core";
 import {
@@ -190,3 +191,9 @@ if (!Capacitor.isNativePlatform()) {
 }
 
 updatePreview(getSelectedColor());
+
+if (Capacitor.isNativePlatform()) {
+  CapacitorUpdater.notifyAppReady().catch((error) => {
+    console.error('Capgo notifyAppReady failed', error);
+  });
+}
