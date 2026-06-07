@@ -1,10 +1,10 @@
-import type { CapacitorConfig } from "@capacitor/cli";
+import type { CapacitorConfig } from '@capacitor/cli';
 import pkg from './package.json';
 
 const config: CapacitorConfig = {
-  appId: "app.capgo.navigation.bar",
-  appName: "Navigation Bar Example",
-  webDir: "dist",
+  appId: 'app.capgo.navigation.bar',
+  appName: 'Navigation Bar Example',
+  webDir: 'dist',
   bundledWebRuntime: false,
   plugins: {
     CapacitorUpdater: {
