@@ -35,11 +35,34 @@ npx cap sync
 
 - `example-app`: Interactive showcase that exercises all plugin options (color presets, custom hex, dark buttons, state reading).
 
+## Configuration
+
+You can apply navigation bar defaults when the native plugin loads:
+
+```typescript
+import type { CapacitorConfig } from '@capacitor/cli';
+
+const config: CapacitorConfig = {
+  plugins: {
+    NavigationBar: {
+      color: '#ffffff',
+      dividerColor: '#d9d9d9',
+      style: 'LIGHT',
+    },
+  },
+};
+
+export default config;
+```
+
+`style` accepts `LIGHT`, `DARK`, or `DEFAULT`. Use `LIGHT` for dark buttons, `DARK` for light buttons, and `DEFAULT` to follow the current device appearance.
 
 ## API
 
 <docgen-index>
 
+* [`hide()`](#hide)
+* [`show()`](#show)
 * [`setNavigationBarColor(...)`](#setnavigationbarcolor)
 * [`getNavigationBarColor()`](#getnavigationbarcolor)
 * [`getPluginVersion()`](#getpluginversion)
@@ -51,6 +74,36 @@ npx cap sync
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 Capacitor Navigation Bar Plugin for customizing the Android navigation bar.
+
+### hide()
+
+```typescript
+hide() => Promise<void>
+```
+
+Hide the navigation bar.
+
+Only available on Android.
+
+**Since:** 8.2.0
+
+--------------------
+
+
+### show()
+
+```typescript
+show() => Promise<void>
+```
+
+Show the navigation bar.
+
+Only available on Android.
+
+**Since:** 8.2.0
+
+--------------------
+
 
 ### setNavigationBarColor(...)
 

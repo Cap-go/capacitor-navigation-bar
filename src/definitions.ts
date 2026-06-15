@@ -1,3 +1,43 @@
+/// <reference types="@capacitor/cli" />
+
+declare module '@capacitor/cli' {
+  export interface PluginsConfig {
+    NavigationBar?: {
+      /**
+       * The hexadecimal color to set as the background color of the navigation bar.
+       *
+       * Use `'transparent'` to make the navigation bar transparent.
+       *
+       * Only available on Android.
+       *
+       * @since 8.2.0
+       * @example "#ffffff"
+       */
+      color?: string;
+      /**
+       * The hexadecimal color to set as the color of the navigation bar divider.
+       *
+       * Use `'transparent'` to hide the divider.
+       *
+       * Only available on Android (API level 28+).
+       *
+       * @since 8.2.0
+       * @example "#d9d9d9"
+       */
+      dividerColor?: string;
+      /**
+       * The style of the navigation bar buttons.
+       *
+       * Only available on Android.
+       *
+       * @since 8.2.0
+       * @example "LIGHT"
+       */
+      style?: 'DARK' | 'LIGHT' | 'DEFAULT';
+    };
+  }
+}
+
 /**
  * Predefined navigation bar colors.
  *
@@ -11,13 +51,38 @@ export enum NavigationBarColor {
   /** Transparent color */
   TRANSPARENT = 'transparent',
 }
-
 /**
  * Capacitor Navigation Bar Plugin for customizing the Android navigation bar.
  *
  * @since 1.0.0
  */
 export interface NavigationBarPlugin {
+  /**
+   * Hide the navigation bar.
+   *
+   * Only available on Android.
+   *
+   * @since 8.2.0
+   * @example
+   * ```typescript
+   * await NavigationBar.hide();
+   * ```
+   */
+  hide(): Promise<void>;
+
+  /**
+   * Show the navigation bar.
+   *
+   * Only available on Android.
+   *
+   * @since 8.2.0
+   * @example
+   * ```typescript
+   * await NavigationBar.show();
+   * ```
+   */
+  show(): Promise<void>;
+
   /**
    * Set the navigation bar color and button theme.
    *
