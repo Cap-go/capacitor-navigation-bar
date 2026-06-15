@@ -3,10 +3,18 @@ import { WebPlugin } from '@capacitor/core';
 import type { NavigationBarPlugin } from './definitions';
 
 export class NavigationBarWeb extends WebPlugin implements NavigationBarPlugin {
+  async hide(): Promise<void> {
+    console.log('Cannot hide navigation bar on web');
+  }
+
+  async show(): Promise<void> {
+    console.log('Cannot show navigation bar on web');
+  }
+
   async setNavigationBarColor(options: { color: string; darkButtons?: boolean; dividerColor?: string }): Promise<void> {
     console.log('Cannot setNavigationBarColor on web', options);
-    return;
   }
+
   async getNavigationBarColor(): Promise<{
     color: string;
     darkButtons: boolean;

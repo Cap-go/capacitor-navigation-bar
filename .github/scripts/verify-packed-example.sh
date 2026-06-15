@@ -38,28 +38,24 @@ bun remove "$plugin_name"
 bun add "${packed_packages[0]}"
 bun run build
 
+ensure_platform() {
+  local platform="$1"
+  if [ -d "$platform" ]; then
+    bunx cap sync "$platform"
+  else
+    bunx cap add "$platform"
+  fi
+}
+
 case "$platform" in
   android)
-    if [ ! -d android ]; then
-      bunx cap add android
-    fi
-    bunx cap sync android
+    ensure_platform android
     cd android
     ./gradlew build test
     ;;
   ios)
-    if [ ! -d ios ]; then
-      bunx cap add ios
-    fi
-    bunx cap sync ios
-    rm -rf "$HOME/Library/Caches/org.swift.swiftpm/artifacts"/https___github_com_ionic_team_capacitor_swift_pm_releases_download_*
-    xcodebuild \
-      -project ios/App/App.xcodeproj \
-      -scheme App \
-      -destination generic/platform=iOS \
-      -clonedSourcePackagesDirPath "$tmp_root/plugin-example-swiftpm" \
-      -derivedDataPath "$tmp_root/plugin-example-derived-data" \
-      CODE_SIGNING_ALLOWED=NO
+    ensure_platform ios
+    xcodebuild -project ios/App/App.xcodeproj -scheme App -destination generic/platform=iOS CODE_SIGNING_ALLOWED=NO
     ;;
   web)
     ;;
