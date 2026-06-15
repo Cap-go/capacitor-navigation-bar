@@ -40,9 +40,16 @@ npx cap sync
 
 <docgen-index>
 
+* [`getColor()`](#getcolor)
+* [`getStyle()`](#getstyle)
+* [`hide()`](#hide)
+* [`setColor(...)`](#setcolor)
+* [`setStyle(...)`](#setstyle)
+* [`show()`](#show)
 * [`setNavigationBarColor(...)`](#setnavigationbarcolor)
 * [`getNavigationBarColor()`](#getnavigationbarcolor)
 * [`getPluginVersion()`](#getpluginversion)
+* [Interfaces](#interfaces)
 * [Enums](#enums)
 
 </docgen-index>
@@ -51,6 +58,108 @@ npx cap sync
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 Capacitor Navigation Bar Plugin for customizing the Android navigation bar.
+
+### getColor()
+
+```typescript
+getColor() => Promise<GetColorResult>
+```
+
+Get the current background color of the navigation bar.
+
+Only available on Android.
+
+**Returns:** <code>Promise&lt;<a href="#getcolorresult">GetColorResult</a>&gt;</code>
+
+**Since:** 8.2.0
+
+--------------------
+
+
+### getStyle()
+
+```typescript
+getStyle() => Promise<GetStyleResult>
+```
+
+Get the current style of the navigation bar buttons.
+
+Only available on Android.
+
+**Returns:** <code>Promise&lt;<a href="#getstyleresult">GetStyleResult</a>&gt;</code>
+
+**Since:** 8.2.0
+
+--------------------
+
+
+### hide()
+
+```typescript
+hide() => Promise<void>
+```
+
+Hide the navigation bar.
+
+Only available on Android.
+
+**Since:** 8.2.0
+
+--------------------
+
+
+### setColor(...)
+
+```typescript
+setColor(options: SetColorOptions) => Promise<void>
+```
+
+Set the background color of the navigation bar.
+
+Only available on Android.
+
+| Param         | Type                                                        |
+| ------------- | ----------------------------------------------------------- |
+| **`options`** | <code><a href="#setcoloroptions">SetColorOptions</a></code> |
+
+**Since:** 8.2.0
+
+--------------------
+
+
+### setStyle(...)
+
+```typescript
+setStyle(options: SetStyleOptions) => Promise<void>
+```
+
+Set the style of the navigation bar buttons.
+
+Only available on Android.
+
+| Param         | Type                                                        |
+| ------------- | ----------------------------------------------------------- |
+| **`options`** | <code><a href="#setstyleoptions">SetStyleOptions</a></code> |
+
+**Since:** 8.2.0
+
+--------------------
+
+
+### show()
+
+```typescript
+show() => Promise<void>
+```
+
+Show the navigation bar.
+
+Only available on Android.
+
+**Since:** 8.2.0
+
+--------------------
+
 
 ### setNavigationBarColor(...)
 
@@ -99,7 +208,48 @@ Get the native Capacitor plugin version.
 --------------------
 
 
+### Interfaces
+
+
+#### GetColorResult
+
+| Prop        | Type                | Description                                                                                                 | Since |
+| ----------- | ------------------- | ----------------------------------------------------------------------------------------------------------- | ----- |
+| **`color`** | <code>string</code> | The hexadecimal color of the navigation bar, or `'transparent'` if the navigation bar is fully transparent. | 8.2.0 |
+
+
+#### GetStyleResult
+
+| Prop        | Type                                    | Description                              | Since |
+| ----------- | --------------------------------------- | ---------------------------------------- | ----- |
+| **`style`** | <code><a href="#style">Style</a></code> | The style of the navigation bar buttons. | 8.2.0 |
+
+
+#### SetColorOptions
+
+| Prop               | Type                | Description                                                                                                                                                  | Since |
+| ------------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- |
+| **`color`**        | <code>string</code> | The hexadecimal color to set as the background color of the navigation bar. Use `'transparent'` to make the navigation bar transparent.                      | 8.2.0 |
+| **`dividerColor`** | <code>string</code> | The hexadecimal color to set as the color of the navigation bar divider. Use `'transparent'` to hide the divider. Only available on Android (API level 28+). | 8.2.0 |
+
+
+#### SetStyleOptions
+
+| Prop        | Type                                    | Description                              | Since |
+| ----------- | --------------------------------------- | ---------------------------------------- | ----- |
+| **`style`** | <code><a href="#style">Style</a></code> | The style of the navigation bar buttons. | 8.2.0 |
+
+
 ### Enums
+
+
+#### Style
+
+| Members       | Value                  | Description                                  | Since |
+| ------------- | ---------------------- | -------------------------------------------- | ----- |
+| **`Dark`**    | <code>'DARK'</code>    | Light icons on a dark background.            | 8.2.0 |
+| **`Default`** | <code>'DEFAULT'</code> | Resolved from the current device appearance. | 8.2.0 |
+| **`Light`**   | <code>'LIGHT'</code>   | Dark icons on a light background.            | 8.2.0 |
 
 
 #### NavigationBarColor
