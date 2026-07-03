@@ -3,7 +3,7 @@ import pkg from './package.json';
 
 const config: CapacitorConfig = {
   appId: 'app.capgo.navigation.bar',
-  appName: 'Navigation Bar Example',
+  appName: '@capgo/capacitor-navigation-bar',
   webDir: 'dist',
   bundledWebRuntime: false,
   plugins: {
