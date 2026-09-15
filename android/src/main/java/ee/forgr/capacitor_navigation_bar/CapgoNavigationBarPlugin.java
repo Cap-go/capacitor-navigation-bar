@@ -26,7 +26,7 @@ public class CapgoNavigationBarPlugin extends Plugin {
     private static final String TAG = "NavigationBar";
     private static final String TRANSPARENT = "transparent";
 
-    private final String pluginVersion = "8.2.8";
+    private final String pluginVersion = "8.2.9";
 
     @Override
     public void load() {
