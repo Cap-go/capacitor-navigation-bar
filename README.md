@@ -21,7 +21,7 @@ Control the Android navigation bar from your Capacitor app: set its color and bu
 - **Read state**: `getNavigationBarColor()` returns the current color and button theme.
 - **Hide and show**: `hide()` and `show()` for fullscreen content.
 - **Config defaults**: set `color`, `dividerColor` and `style` in `capacitor.config` to apply them at launch.
-- **Platforms**: Android. Android only. iOS and web reject the calls.
+- **Platforms**: Android. Android only. iOS rejects the calls, and web only logs them.
 
 ## Documentation
 
