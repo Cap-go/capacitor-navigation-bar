@@ -1,13 +1,27 @@
-<a href="https://capgo.app/"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-navigation-bar" alt="Capgo - Instant updates for Capacitor" /></a>
-
-<div align="center">
-  <h2><a href="https://capgo.app/?ref=plugin_navigation_bar"> ➡️ Get Instant updates for your App with Capgo</a></h2>
-  <h2><a href="https://capgo.app/consulting/?ref=plugin_navigation_bar"> Missing a feature? We’ll build the plugin for you 💪</a></h2>
-</div>
-
 # capacitor-navigation-bar
 
-Set navigation bar color for android lollipop and higher
+Control the Android navigation bar from your Capacitor app: set its color and button style, make it transparent, or hide it for immersive screens.
+
+<a href="https://capgo.app/?ref=plugin_navigation_bar"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-navigation-bar" alt="Capgo - Instant updates for Capacitor" /></a>
+
+<div align="center">
+  <p><b>Capgo</b>: open-source live updates for Ionic and Capacitor apps. Ship OTA fixes and features instantly, without waiting for app store review.</p>
+  <h2><a href="https://capgo.app/register/?ref=plugin_navigation_bar">➡️ Get started for free</a></h2>
+  <p>14-day unlimited free trial. No credit card required</p>
+  <p><a href="https://capgo.app/consulting/?ref=plugin_navigation_bar">Missing a feature? We'll build the plugin for you 💪</a></p>
+</div>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Cap-go/capacitor-navigation-bar/main/assets/github-social-preview.png" alt="@capgo/capacitor-navigation-bar for Capacitor apps" width="300" />
+</p>
+
+## Key features
+
+- **Color**: `setNavigationBarColor()` sets the bar color, including `transparent`, and light or dark buttons.
+- **Read state**: `getNavigationBarColor()` returns the current color and button theme.
+- **Hide and show**: `hide()` and `show()` for fullscreen content.
+- **Config defaults**: set `color`, `dividerColor` and `style` in `capacitor.config` to apply them at launch.
+- **Platforms**: Android. Android only. iOS and web reject the calls.
 
 ## Documentation
 
