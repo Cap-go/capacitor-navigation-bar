@@ -199,7 +199,7 @@ public class CapgoNavigationBarPlugin extends Plugin {
         if (Color.alpha(intColor) == 0) {
             return TRANSPARENT;
         }
-        return String.format("#%06X", (0xFFFFFF & intColor));
+        return String.format("#%06X", 0xFFFFFF & intColor);
     }
 
     private boolean isNightMode() {
