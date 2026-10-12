@@ -2,7 +2,7 @@
 
 Control the Android navigation bar from your Capacitor app: set its color and button style, make it transparent, or hide it for immersive screens.
 
-<a href="https://capgo.app/?ref=plugin_navigation_bar"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-navigation-bar" alt="Capgo - Instant updates for Capacitor" /></a>
+<a href="https://capgo.app/?ref=plugin_navigation_bar"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-navigation-bar" alt="Capgo - Build Capacitor apps with AI, ship updates instantly" /></a>
 
 <div align="center">
   <p><b>Capgo</b>: push fixes to your Capacitor users in minutes, build signed iOS and Android apps without a Mac, and roll back in one click.</p>
@@ -10,6 +10,8 @@ Control the Android navigation bar from your Capacitor app: set its color and bu
   <p>14-day unlimited free trial. No credit card required</p>
   <p><a href="https://capgo.app/consulting/?ref=plugin_navigation_bar">Missing a feature? We'll build the plugin for you 💪</a></p>
 </div>
+
+> 🤖 **Building with an AI coding agent?** Install [Capgo skills](https://capgo.app/skills/?ref=plugin_navigation_bar) so Claude Code, Codex, Cursor, Copilot, or Gemini CLI know how to install and use `@capgo/capacitor-navigation-bar` in your Capacitor app: `npx skills add Cap-go/capgo-skills`. Then ask your agent: *"Add @capgo/capacitor-navigation-bar to my Capacitor app and wire it up."* [Agent setup guides](https://capgo.app/agents/?ref=plugin_navigation_bar) · [Hosted MCP](https://capgo.app/docs/ai/mcp/?ref=plugin_navigation_bar)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Cap-go/capacitor-navigation-bar/main/assets/github-social-preview.png" alt="@capgo/capacitor-navigation-bar for Capacitor apps" width="300" />
